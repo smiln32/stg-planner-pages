@@ -1,8 +1,8 @@
-﻿# Canva Planner Factory: How It Works
+﻿# Planner Factory: How It Works
 
 ## Overview
 
-Canva Planner Factory is a small Python-based system for creating polished, printable planner pages from structured JSON files.
+Planner Factory is a small Python-based system for creating polished, printable planner pages from structured JSON files.
 
 You describe a planner set in JSON: its title, page concepts, section positions, prompts, writing areas, checklists, choices, and tables. The factory validates that description and converts it into a self-contained HTML document. Each generated page is exactly 816 × 1056 pixels, representing an 8.5 × 11-inch US Letter page.
 
@@ -314,4 +314,4 @@ Health-related planners require careful human review. Content involving mental h
 
 ## Summary
 
-To use Canva Planner Factory successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path into Canva. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.
+To use Planner Factory successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path into Canva. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.

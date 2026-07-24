@@ -1,4 +1,4 @@
-﻿# New Chat Starter Prompt — Canva Planner Factory
+﻿# New Chat Starter Prompt — Planner Factory
 
 Upload this folder, then paste the request below with your topic and desired page count.
 
