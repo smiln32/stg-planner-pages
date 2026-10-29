@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class PlannerFactoryTests(unittest.TestCase):
     def load_example(self):
-        return json.loads((ROOT / "examples" / "basic" / "spec.json").read_text(encoding="utf-8-sig"))
+        return json.loads((ROOT / "shared" / "examples" / "basic" / "spec.json").read_text(encoding="utf-8-sig"))
 
     def test_example_has_no_validation_findings(self):
         self.assertEqual(planner_factory.validate(self.load_example()), [])

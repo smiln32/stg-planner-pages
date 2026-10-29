@@ -182,7 +182,7 @@ Each block has exact page coordinates and a content definition. For example:
 }
 ```
 
-The complete field-by-field format is documented in [`SPECIFICATION.md`](SPECIFICATION.md).
+The complete field-by-field format is documented in [`references/SPECIFICATION.md`](references/SPECIFICATION.md).
 
 ## Supported response formats
 
@@ -219,9 +219,9 @@ Correct errors before generating or publishing. Review warnings rather than auto
 
 Three documents guide planner quality:
 
-- [`DESIGN_STANDARD.md`](DESIGN_STANDARD.md) defines the grid, spacing, typography, colors, safe areas, and visual checks.
-- [`CONTENT_GUIDE.md`](CONTENT_GUIDE.md) explains how to write supportive, specific, non-repetitive prompts.
-- [`SPECIFICATION.md`](SPECIFICATION.md) documents the JSON format and all supported content types.
+- [`references/DESIGN_STANDARD.md`](references/DESIGN_STANDARD.md) defines the grid, spacing, typography, colors, safe areas, and visual checks.
+- [`references/CONTENT_GUIDE.md`](references/CONTENT_GUIDE.md) explains how to write supportive, specific, non-repetitive prompts.
+- [`references/SPECIFICATION.md`](references/SPECIFICATION.md) documents the JSON format and all supported content types.
 
 Give every page one distinct concept. A page should help the user notice, choose, plan, track, reflect, or act on one focused idea. Avoid repeating the same prompt, response format, and layout silhouette throughout a set.
 
@@ -254,21 +254,25 @@ After the browser review:
 
 Canva import behavior can change, so the actual imported design must always be checked.
 
+## Working with an AI assistant
+
+The repository is laid out as an Interpretable Context Methodology (ICM) workspace. An assistant reads `CLAUDE.md` for the rules, `CONTEXT.md` for where a task goes, and then the `CONTEXT.md` inside each of the five stage folders under `stages/`: brief, pages, spec, check, export. Each stage writes plain files to its own `output/` folder and stops so you can read and edit them before the next stage begins. Nothing is exported until you tick **Approved for export** in the check report.
+
 ## Project structure
 
 ```text
+CLAUDE.md                      Where an assistant is, and the rules
+CONTEXT.md                     Where a task goes
+stages/                        The planner build as five folders, one contract each
+_config/                       What Planner Studio is and how it looks
+references/                    SPECIFICATION.md, DESIGN_STANDARD.md, CONTENT_GUIDE.md
+shared/                        Specification template, examples, chatbot prompt
+records/                       The ICM structure audit
 planner_factory.py             Generator and validator
-planner_spec_template.json     Reusable specification template
-SPECIFICATION.md               Complete JSON reference
-DESIGN_STANDARD.md             Visual and layout rules
-CONTENT_GUIDE.md               Prompt and content guidance
-NEW_CHAT_STARTER_PROMPT.md      AI-assisted creation workflow
-examples/basic/                Small two-page example
-examples/depression/           Full multi-page example
-examples/adhd/                 ADHD PDF example
-prompts/                       Reusable ideation prompts
-assets/                        Repository preview images
+planner_studio.py              Local server behind Planner Studio
+studio/                        Planner Studio
 tests/                         Automated unit tests
+assets/                        Repository preview images
 .github/workflows/             GitHub Actions validation
 ```
 
@@ -292,7 +296,7 @@ Install Python 3.9 or newer from the official Python website or your operating s
 
 ### JSON cannot be read
 
-Check for missing commas, unmatched braces, invalid quotation marks, or non-JSON comments. Start from `planner_spec_template.json` or generate a new starter file.
+Check for missing commas, unmatched braces, invalid quotation marks, or non-JSON comments. Start from `shared/planner_spec_template.json` or generate a new starter file.
 
 ### Validation returns warnings
 

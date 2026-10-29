@@ -138,8 +138,8 @@ Checks include page/block presence, numeric geometry, safe-area bounds, minimum 
 
 ## Complete examples
 
-- [`examples/basic/spec.json`](examples/basic/spec.json) — two-page introduction
-- [`examples/depression/spec.json`](examples/depression/spec.json) — full planner
-- [`planner_spec_template.json`](planner_spec_template.json) — reusable template
+- [`shared/examples/basic/spec.json`](../shared/examples/basic/spec.json) — two-page introduction
+- [`shared/examples/depression/spec.json`](../shared/examples/depression/spec.json) — full planner
+- [`shared/planner_spec_template.json`](../shared/planner_spec_template.json) — reusable template
 
 Also read [`CONTENT_GUIDE.md`](CONTENT_GUIDE.md) and [`DESIGN_STANDARD.md`](DESIGN_STANDARD.md).

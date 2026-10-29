@@ -12,10 +12,15 @@ htmlcov/
 .uv-python/
 
 # Generated planner output
-examples/ci-output.html
+shared/examples/ci-output.html
 *.generated.html
-output/
+/output/
 dist/
+
+# A stage's output is one planner run: the creator's work, not the product. The folders
+# stay, held by a .gitkeep, because a stage with no output folder is not a stage.
+stages/*/output/*
+!stages/*/output/.gitkeep
 
 # Editors and operating systems
 .vscode/

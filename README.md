@@ -52,14 +52,14 @@ python planner_factory.py --version
 
 ## Complete guide
 
-For a plain-language explanation of the system, requirements, setup, commands, validation, and Canva workflow, read [`HOW_IT_WORKS.md`](HOW_IT_WORKS.md).
+For a plain-language explanation of the system, requirements, setup, commands, validation, and Canva workflow, read [`HOW_IT_WORKS.md`](HOW_IT_WORKS.md). AI assistants start at [`CLAUDE.md`](CLAUDE.md) and [`CONTEXT.md`](CONTEXT.md): the repository is laid out as an Interpretable Context Methodology (ICM) workspace, and the planner build is five stage folders under [`stages/`](stages/).
 
 ## Quick start
 
 1. Clone or download this repository.
-2. Read [`CONTENT_GUIDE.md`](CONTENT_GUIDE.md) for prompt-writing and page-uniqueness guidance.
-3. Read [`DESIGN_STANDARD.md`](DESIGN_STANDARD.md) for the required visual and layout system.
-4. Copy [`planner_spec_template.json`](planner_spec_template.json) and replace the sample content with your planner topic and pages.
+2. Read [`references/CONTENT_GUIDE.md`](references/CONTENT_GUIDE.md) for prompt-writing and page-uniqueness guidance.
+3. Read [`references/DESIGN_STANDARD.md`](references/DESIGN_STANDARD.md) for the required visual and layout system.
+4. Copy [`shared/planner_spec_template.json`](shared/planner_spec_template.json) and replace the sample content with your planner topic and pages.
 5. Give every page a distinct `concept` and define its content blocks.
 6. Validate the specification, generate the HTML, and inspect every page before importing it into Canva.
 
@@ -97,7 +97,7 @@ A planner specification contains set-level information and a list of pages. Each
 }
 ```
 
-See [`planner_spec_template.json`](planner_spec_template.json) and the [`examples/basic`](examples/basic) directory for complete examples.
+See [`shared/planner_spec_template.json`](shared/planner_spec_template.json) and the [`shared/examples/basic`](shared/examples/basic) directory for complete examples.
 
 ## Supported content types
 
@@ -123,11 +123,11 @@ Every page should:
 - Move gently from noticing toward a choice, support, or feasible next step
 - Remain legible and editable after Canva import
 
-The full JSON format is documented in [`SPECIFICATION.md`](SPECIFICATION.md). Visual requirements are documented in [`DESIGN_STANDARD.md`](DESIGN_STANDARD.md).
+The full JSON format is documented in [`references/SPECIFICATION.md`](references/SPECIFICATION.md). Visual requirements are documented in [`references/DESIGN_STANDARD.md`](references/DESIGN_STANDARD.md).
 
 ## Using the project with an AI assistant
 
-[`NEW_CHAT_STARTER_PROMPT.md`](NEW_CHAT_STARTER_PROMPT.md) contains a reusable prompt for asking an AI assistant to create a new planner specification with this toolkit. Provide the desired topic, audience, page count, and outcomes.
+An assistant that can read this folder starts at [`CLAUDE.md`](CLAUDE.md) and walks the five stages under [`stages/`](stages/), stopping for your approval after each. For a chatbot that cannot read the folder, [`shared/new-chat-starter-prompt.md`](shared/new-chat-starter-prompt.md) contains the same build as one reusable prompt. Provide the desired topic, audience, page count, and outcomes.
 
 AI-generated planner content and layouts still require human review. Inspect wording, usefulness, visual balance, cultural fit, accessibility, and every rendered page before publishing or selling a set.
 
@@ -152,18 +152,22 @@ Canva import behavior may change over time, so always test the actual imported d
 ## Repository structure
 
 ```text
+CLAUDE.md                      Layer 0: where an assistant is and the rules
+CONTEXT.md                     Layer 1: where a task goes
+stages/                        Layer 2: the planner build as five folders, each with a contract
+  01_brief/ 02_pages/ 03_spec/ 04_check/ 05_export/
+_config/                       Layer 3: product.md and design-system.md (Planner Studio)
+references/                    Layer 3: SPECIFICATION.md, DESIGN_STANDARD.md, CONTENT_GUIDE.md
+shared/                        Layer 3: planner_spec_template.json, examples/, the chatbot prompt
+records/                       The ICM structure audit
 planner_factory.py             HTML generator and validator
-planner_spec_template.json     Reusable planner specification template
+planner_studio.py              Local server behind Planner Studio
+studio/                        Planner Studio
+tests/                         Automated unit tests, including the structure test
+assets/                        README preview images and approved design references
 HOW_IT_WORKS.md                Plain-language setup and operating guide
-SPECIFICATION.md               Complete JSON field and content-type reference
-CONTENT_GUIDE.md               Prompt, safety, and uniqueness guidance
-DESIGN_STANDARD.md             Typography, spacing, color, and layout rules
-NEW_CHAT_STARTER_PROMPT.md      Reusable AI-assisted creation workflow
-examples/basic/                Minimal two-page example and generated output
-examples/depression/           Full specification, output, and approved reference
-examples/adhd/                 ADHD planner PDF example
-assets/                        README preview images
-prompts/                       Reusable planner ideation prompts
+DECISIONS.md                   Why things are the way they are
+HANDOFF.md                     What comes next
 ```
 
 ## Contributing
