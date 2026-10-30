@@ -8,6 +8,6 @@ Unless a file states otherwise, these materials are made available under the rep
 
 ## Third-party names
 
-Canva is a trademark of Canva Pty Ltd. Perplexity is a trademark of Perplexity AI, Inc. References to these products describe compatible tools or the historical context of a file; they do not imply sponsorship, endorsement, partnership, or affiliation.
+Canva is a trademark of Canva Pty Ltd. References to Canva describe a compatible tool; they do not imply sponsorship, endorsement, partnership, or affiliation.
 
 No third-party logos, proprietary templates, stock assets, or licensed font files are intentionally distributed in this repository.

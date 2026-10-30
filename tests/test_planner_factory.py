@@ -38,6 +38,13 @@ class PlannerFactoryTests(unittest.TestCase):
         findings = planner_factory.validate(spec)
         self.assertTrue(any("overlap" in finding for finding in findings))
 
+    def test_string_coordinates_do_not_crash_the_overlap_check(self):
+        spec = self.load_example()
+        spec["pages"][0]["blocks"][0].update(x="28", y=104, w=300, h=200)
+        spec["pages"][0]["blocks"][1].update(x=28, y=104, w=300, h=200)
+        findings = planner_factory.validate(spec)
+        self.assertTrue(any("overlap" in finding for finding in findings))
+
     def test_invalid_geometry_is_an_error(self):
         cases = [
             {"x": 28, "y": 104, "w": 179, "h": 200},

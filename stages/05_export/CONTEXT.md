@@ -35,7 +35,9 @@ Run commands from the project root.
 4. Copy the specification beside it, so the export folder holds everything the creator
    needs: `stages/03_spec/output/<slug>.json` to `stages/05_export/output/<slug>.json`.
 5. Tell the person what was written and where, and point them at the Canva workflow for the
-   import and the checks that follow it.
+   import and the checks that follow it. If the report's Sensitive topic section says yes,
+   repeat that the set still needs review by an appropriately qualified professional before
+   it is published or sold. Export does not replace that review.
 
 ## Outputs
 
@@ -47,4 +49,5 @@ Run commands from the project root.
 ## Human gate
 
 The person imports the HTML into Canva and checks every page there before treating the
-planner as finished. This is the end of the run.
+planner as finished. A planner about mental health, trauma, disability, medication or crisis
+is also reviewed by a qualified professional before publication. This is the end of the run.

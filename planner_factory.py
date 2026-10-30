@@ -179,10 +179,14 @@ def validate_uniqueness_and_collisions(spec: dict[str, Any]) -> list[str]:
                     )
                 elif phrase:
                     seen[phrase] = (page_no, block_no)
-        for a, first in enumerate(blocks):
-            for b, second in enumerate(blocks[a + 1:], a + 2):
-                if all(k in first and k in second for k in ("x", "y", "w", "h")) and first["x"] < second["x"] + second["w"] and first["x"] + first["w"] > second["x"] and first["y"] < second["y"] + second["h"] and first["y"] + first["h"] > second["y"]:
-                    findings.append(f"ERROR: Page {page_no}, blocks {a + 1} and {b} overlap.")
+        boxes = []
+        for n, block in enumerate(blocks, 1):
+            try: boxes.append((n, *(int(block[k]) for k in ("x", "y", "w", "h"))))
+            except (KeyError, TypeError, ValueError): continue  # already reported by validate()
+        for i, (a, ax, ay, aw, ah) in enumerate(boxes):
+            for b, bx, by, bw, bh in boxes[i + 1:]:
+                if ax < bx + bw and ax + aw > bx and ay < by + bh and ay + ah > by:
+                    findings.append(f"ERROR: Page {page_no}, blocks {a} and {b} overlap.")
     return findings
 def validate(spec: dict[str, Any]) -> list[str]:
     warnings: list[str] = []

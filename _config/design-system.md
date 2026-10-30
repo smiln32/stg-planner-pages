@@ -179,6 +179,15 @@ A compact workspace header holds project identity, undo/redo, save state, previe
 
 The preview preserves the exact 816 × 1056 proportion. Blocks snap to a 3-unit grid with 14px gutters and remain inside x=28–788 and y=104–1030. Selection uses a crisp Layout Slate outline and visible move handle. Dragging announces the destination to assistive technology; keyboard users can move blocks between named grid slots and undo every change.
 
+## Visual References
+
+Four pictures in `assets/design/` record how this direction was chosen and what it looks like. The tokens in this file's header are the source of truth; the pictures illustrate, they do not override.
+
+- [`direction-probes.png`](../assets/design/direction-probes.png): three candidate directions side by side, A Structured Canvas, B Working Atelier, C Guided Blueprint. B was chosen; A and C were rejected.
+- [`approved-editor-direction.png`](../assets/design/approved-editor-direction.png): the approved editor view, with the Brief, Blueprint, Editor and Review steps in the header, the pages rail, the true-size preview and the block inspector.
+- [`creative-working-atelier.png`](../assets/design/creative-working-atelier.png): the same direction at full density, with rulers, the page-pattern library, the creative-direction panel and validation beside the preview.
+- [`working-atelier-palette.png`](../assets/design/working-atelier-palette.png): the palette and type specimen, showing the eight studio colors with their values, Georgia for planner titles, Aptos for the interface, and the button, chip and focus states.
+
 ## Do's and Don'ts
 
 ### Do:

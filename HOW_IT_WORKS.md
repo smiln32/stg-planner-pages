@@ -200,9 +200,11 @@ Prefer the standard types. They are easier to validate and keep visually consist
 
 The factory returns one of three exit codes:
 
-- `0` — generation succeeded or validation passed cleanly
-- `1` — validation completed with advisory warnings
-- `2` — invalid input or a validation error
+- `0` — the HTML was generated, or validation-only passed with no warnings
+- `1` — validation-only finished with advisory warnings and no errors
+- `2` — the specification could not be read, or validation found an error, in either mode
+
+Only `--validate-only` reports warnings in the exit code. Plain generation writes the HTML and exits `0` even when warnings were printed, so read the terminal, not just the exit code, before treating a file as finished.
 
 Typical findings include:
 
