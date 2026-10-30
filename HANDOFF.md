@@ -31,6 +31,4 @@ git remote set-url origin https://github.com/smiln32/stg-planner-pages.git
 2. **Enforce the export gate in code**, if the cold walk shows an assistant ticking
    **Approved for export** itself. The sibling repository's `shared/tools/planner.py export`
    refuses an unapproved check and is the model.
-3. **Decide what `.impeccable/design.json` was for.** It is deleted in the working tree and
-   the deletion is not committed. Restore it or commit the removal.
-4. **The README preview image alt text** reads `factory''s` with a doubled apostrophe.
+3. **The README preview image alt text** reads `factory''s` with a doubled apostrophe.
