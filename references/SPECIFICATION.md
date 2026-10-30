@@ -1,6 +1,6 @@
 ﻿# Planner Specification Reference
 
-Planner Factory reads a UTF-8 JSON document and renders each entry in `pages` as an editable 816 × 1056 px US Letter page.
+STG Planner Pages reads a UTF-8 JSON document and renders each entry in `pages` as an editable 816 × 1056 px US Letter page.
 
 ## Create a starter file
 

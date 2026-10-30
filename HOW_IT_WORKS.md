@@ -1,8 +1,8 @@
-﻿# Planner Factory: How It Works
+﻿# STG Planner Pages: How It Works
 
 ## Overview
 
-Planner Factory is a small Python-based system for creating polished, printable planner pages from structured JSON files.
+STG Planner Pages is a small Python-based system for creating polished, printable planner pages from structured JSON files.
 
 You describe a planner set in JSON: its title, page concepts, section positions, prompts, writing areas, checklists, choices, and tables. The factory validates that description and converts it into a self-contained HTML document. Each generated page is exactly 816 × 1056 pixels, representing an 8.5 × 11-inch US Letter page.
 
@@ -70,8 +70,8 @@ The generator uses only the Python standard library. No third-party Python packa
 Download the repository as a ZIP from GitHub and extract it, or clone it with Git:
 
 ```bash
-git clone https://github.com/smiln32/planner-factory.git
-cd planner-factory
+git clone https://github.com/smiln32/stg-planner-pages.git
+cd stg-planner-pages
 ```
 
 The repository is public, so no GitHub sign-in is required to clone it.
@@ -318,4 +318,4 @@ Health-related planners require careful human review. Content involving mental h
 
 ## Summary
 
-To use Planner Factory successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path into Canva. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.
+To use STG Planner Pages successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path into Canva. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.

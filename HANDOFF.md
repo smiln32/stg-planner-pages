@@ -13,6 +13,15 @@ of the work and what to do next. Why things are the way they are is in
 - The engine, the Studio, the tests and CI are unchanged apart from the paths to the
   examples, which moved to `shared/examples/`.
 
+## Rename to STG Planner Pages, 2026-10-29
+
+The documents now link to `smiln32/stg-planner-pages`. The GitHub repository is still named
+`planner-factory` until the owner renames it there; after that, repoint the local remote:
+
+```bash
+git remote set-url origin https://github.com/smiln32/stg-planner-pages.git
+```
+
 ## Next
 
 1. **A cold walk.** Give an assistant only "make me a planner about X" and watch it go from

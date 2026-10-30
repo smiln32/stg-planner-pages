@@ -3,7 +3,7 @@
 > **Where do I go?** This file routes a task to the place that handles it. It does not do
 > work. It points. Read `CLAUDE.md` first for the rules.
 
-Planner Factory turns a planner idea into printable pages. The folders are the instructions.
+STG Planner Pages turns a planner idea into printable pages. The folders are the instructions.
 
 | Layer | Question | Where |
 |---|---|---|
