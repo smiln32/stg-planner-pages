@@ -11,7 +11,9 @@ writes down what a person must judge.
 | Layer | What | Where | Section |
 |---|---|---|---|
 | 4 (working) | The specification | `../03_spec/output/<slug>.json` | Full file |
-| 4 (working) | The brief, for the sensitive-topic flag | `../01_brief/output/<slug>.brief.md` | Sensitive topic |
+| 4 (working) | The brief, for the page count and the sensitive-topic flag | `../01_brief/output/<slug>.brief.md` | Page count, Sensitive topic |
+| 4 (working) | The approved plan, for which page carries the scope and support note | `../02_pages/output/<slug>.plan.md` | Sensitive topic note |
+| 4 (working) | Warnings stage 03 left standing, when the file exists | `../03_spec/output/<slug>.warnings.md` | Full file |
 | 3 (reference) | The shape of the check report | `references/check-report-template.md` | Full file |
 | 3 (reference) | What to look at in the browser | `../../HOW_IT_WORKS.md` | Reviewing generated pages |
 | 3 (reference) | What a page must satisfy | `../../references/DESIGN_STANDARD.md` | Required checks |
@@ -27,13 +29,22 @@ Run the command from the project root.
    python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html
    ```
 
-2. Copy `references/check-report-template.md` to `output/<slug>.check.md`. Record the exit
-   code and every finding, word for word.
-3. Give a verdict: **PASS** with exit 0, **PASS WITH WARNINGS** with exit 1, **FAIL** with
+2. Record the specification's SHA-256, so stage 05 can tell whether the file it exports is
+   the file that was checked:
+
+   ```bash
+   python -c "import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest())" stages/03_spec/output/<slug>.json
+   ```
+
+3. Copy `references/check-report-template.md` to `output/<slug>.check.md`. Record the hash,
+   the exit code and every finding, word for word. If `<slug>.warnings.md` exists, copy each
+   reason beneath its warning. From the brief and the plan, record the page count and the
+   page that carries the scope and support note.
+4. Give a verdict: **PASS** with exit 0, **PASS WITH WARNINGS** with exit 1, **FAIL** with
    exit 2 or no proof written.
-4. On **FAIL**, go back to stage 03 and say what the report names. Do not edit the
+5. On **FAIL**, go back to stage 03 and say what the report names. Do not edit the
    specification from this stage.
-5. Leave the **Human review** list unticked. It is the person's to tick.
+6. Leave the **Human review** list unticked. It is the person's to tick.
 
 ## Outputs
 

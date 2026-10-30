@@ -29,7 +29,9 @@ Run commands from the project root.
    answerable and used nowhere else in the set. Prefer the standard content types; do not use
    `custom_html` unless the plan names an interaction no type can express.
 4. Fill each page to y=980 or lower without crossing y=1030. Writing space is content.
-5. Validate, and fix every finding before the gate:
+5. Validate, and fix every finding. A warning may stay only when fixing it would break the
+   plan; then write `output/<slug>.warnings.md` with the warning word for word and why it
+   stays. Stage 04 reads that file. Do not write it when validation is clean.
 
    ```bash
    python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
@@ -41,7 +43,7 @@ Run commands from the project root.
 
 | Check | Pass condition |
 |---|---|
-| Validation | Exit code 0, or every remaining warning is explained in the handoff note |
+| Validation | Exit code 0, or every remaining warning is in `output/<slug>.warnings.md` with its reason |
 | Plan fidelity | One page per plan row, same order, same concepts |
 | Sensitive topic | If the brief says yes, the named page carries the scope and support note |
 
@@ -50,6 +52,7 @@ Run commands from the project root.
 | Artifact | Location | Format |
 |---|---|---|
 | The specification | `output/<slug>.json` | JSON, as `../../references/SPECIFICATION.md` describes |
+| Warnings that stay, only if any | `output/<slug>.warnings.md` | Markdown: each warning word for word, then one line on why it stays |
 
 ## Human gate
 

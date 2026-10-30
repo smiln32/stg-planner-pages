@@ -7,7 +7,7 @@
 | Layer | What | Where | Section |
 |---|---|---|---|
 | 4 (working) | The specification | `../03_spec/output/<slug>.json` | Full file |
-| 4 (working) | The check report, approved | `../04_check/output/<slug>.check.md` | Verdict, Decision |
+| 4 (working) | The check report, approved | `../04_check/output/<slug>.check.md` | Header (the hash), Verdict, Decision |
 | 3 (reference) | What each exported file is for | `references/deliverables.md` | Full file |
 | 3 (reference) | The steps after export | `../../HOW_IT_WORKS.md` | Canva workflow |
 
@@ -18,8 +18,14 @@ Run commands from the project root.
 1. Open the check report. Its verdict must not be **FAIL**, and the line
    `- [x] Approved for export` must be ticked by the person. If either is missing, stop and
    say which. Do not tick it yourself.
-2. Confirm the specification has not changed since it was checked. If it has, go back to
-   stage 04.
+2. Confirm the specification is the one that was checked. Compute its SHA-256 and compare
+   it with the hash in the report's header. If they differ, the file changed after approval:
+   stop and go back to stage 04.
+
+   ```bash
+   python -c "import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest())" stages/03_spec/output/<slug>.json
+   ```
+
 3. Generate the finished planner:
 
    ```bash

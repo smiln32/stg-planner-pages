@@ -55,6 +55,14 @@ folders stay, held by `.gitkeep`, because a stage with no `output/` is not a sta
 ignored. The ignore rule became `/output/` so it no longer swallows the stages' own
 `output/` folders.
 
+**Approval is tied to a hash, not a path.** From the 2026-10-29 review: stage 04 records
+the specification's SHA-256 and stage 05 compares it before exporting, with a one-line
+standard-library command, so an edit after approval cannot be exported unnoticed.
+
+**A revision archives what it supersedes.** Before stage 02 or 03 runs again for a planner,
+each later stage's files for it move to `output/archive/<date>/`. Continuation looks only
+at `output/` itself, so a stale export cannot pass for progress, and nothing is deleted.
+
 **No tool enforces the export gate.** The sibling's export command refuses an unapproved
 check; here stage 05's contract makes the same demand of the assistant and `HANDOFF.md`
 lists the enforcement as a possible next step.

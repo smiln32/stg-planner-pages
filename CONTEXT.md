@@ -41,9 +41,14 @@ assistant does them, with the same engine and the same rules.
 
 - **"Make me a planner"** → `stages/01_brief/CONTEXT.md`. Begin there, every time.
 - **"Carry on with the planner called X"** → look in each stage's `output/` for files named
-  `X.*`. The last stage that holds one is where the run stands.
+  `X.*`, not counting anything under `output/archive/`. The last stage that holds one is
+  where the run stands.
 - **"Change the pages of X"** → `stages/02_pages/CONTEXT.md`, then run 03 to 05 again.
 - **"Change the wording or layout of X"** → `stages/03_spec/CONTEXT.md`, then 04 and 05 again.
+- **Before either revision begins:** in every later stage, move the files named `X.*` from
+  `output/` into `output/archive/<YYYY-MM-DD>/` (add `-2`, `-3` for another revision the same
+  day). Then no stale check or export can pass for the current one, and the earlier export
+  is kept.
 - **"I want to make one by hand"** → run `python planner_studio.py` and use the Studio.
 - **"I am using a chatbot, not this folder"** → `shared/new-chat-starter-prompt.md`.
 

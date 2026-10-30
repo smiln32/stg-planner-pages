@@ -6,7 +6,7 @@ STG Planner Pages is a specification-driven toolkit for creating polished, print
 
 The project combines a consistent visual system with guidance for writing supportive, useful, and non-repetitive prompts. Each planner page is designed around one clear concept, with response formats and layouts chosen to match its purpose.
 
-![Two generated planner pages showing the factory''s spacing, typography, checklists, and writing areas](assets/planner-preview.png)
+![Two generated planner pages showing the toolkit's spacing, typography, checklists, and writing areas](assets/planner-preview.png)
 
 ## What it provides
 

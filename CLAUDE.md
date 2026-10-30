@@ -51,8 +51,8 @@ python planner_factory.py --init FILE.json --topic "TOPIC"    # a starter specif
 python planner_studio.py                                      # the Studio at http://127.0.0.1:8765
 ```
 
-No third-party Python packages. Python 3.9 is the floor and CI holds it. There is no linter
-or formatter; do not add one without asking.
+No third-party Python packages. Python 3.9 is the floor; CI runs 3.12 only, so keep to 3.9
+syntax yourself. There is no linter or formatter; do not add one without asking.
 
 ## Rules that are not style preferences
 

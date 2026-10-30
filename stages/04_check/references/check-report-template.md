@@ -1,7 +1,7 @@
 # Check report: <set title>
 
-Slug: `<slug>`. Checked on: <date>. Specification: `../03_spec/output/<slug>.json`.
-Proof: `<slug>.proof.html` beside this file.
+Slug: `<slug>`. Checked on: <date>. Specification: `../../03_spec/output/<slug>.json`.
+SHA-256 of the specification: `<hash>`. Proof: `<slug>.proof.html` beside this file.
 
 ## Verdict
 
@@ -11,12 +11,14 @@ Exit code: <0, 1 or 2>
 
 ## Findings from the validator
 
-Every line the command printed, word for word. Write `None` if it printed nothing.
+Every line the command printed, word for word. Write `None` if it printed nothing. Under
+each warning that stage 03 left standing, its reason from `<slug>.warnings.md`.
 
 ## Sensitive topic
 
 `yes` or `no`, from the brief. If yes: which page carries the scope and support language,
-and this set needs review by an appropriately qualified professional before publication.
+as the plan's Sensitive topic note says, and this set needs review by an appropriately
+qualified professional before publication.
 
 ## Human review
 
@@ -28,7 +30,7 @@ Tick each line after looking, not before. Software cannot judge these.
 - [ ] No two blocks overlap and every corner is complete
 - [ ] Content reaches the lower part of the page without entering the footer
 - [ ] Every prompt is specific, answerable, kind, and used once in the set
-- [ ] The page count matches the brief
+- [ ] The page count matches the brief: <count from the brief>
 - [ ] Sensitive-topic wording is present where the brief requires it
 
 ## Decision
