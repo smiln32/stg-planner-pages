@@ -7,7 +7,7 @@ SHA-256 of the specification: `<hash>`. Proof: `<slug>.proof.html` beside this f
 
 **PASS** | **PASS WITH WARNINGS** | **FAIL**
 
-Exit code: <0, 1 or 2>
+Validation exit code: <0, 1 or 2>
 
 ## Findings from the validator
 

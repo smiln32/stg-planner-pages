@@ -23,28 +23,36 @@ writes down what a person must judge.
 
 Run the command from the project root.
 
-1. Render the proof. This also validates, and prints every finding:
+1. Validate first. The verdict comes from this exit code, not from the next step's, because
+   generation returns 0 whenever it writes a proof, warnings or not:
+
+   ```bash
+   python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
+   ```
+
+2. Render the proof. It prints the same findings again:
 
    ```bash
    python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html
    ```
 
-2. Record the specification's SHA-256, so stage 05 can tell whether the file it exports is
+3. Record the specification's SHA-256, so stage 05 can tell whether the file it exports is
    the file that was checked:
 
    ```bash
    python -c "import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest())" stages/03_spec/output/<slug>.json
    ```
 
-3. Copy `references/check-report-template.md` to `output/<slug>.check.md`. Record the hash,
-   the exit code and every finding, word for word. If `<slug>.warnings.md` exists, copy each
+4. Copy `references/check-report-template.md` to `output/<slug>.check.md`. Record the hash,
+   the validation exit code and every finding, word for word. If `<slug>.warnings.md` exists, copy each
    reason beneath its warning. From the brief and the plan, record the page count and the
    page that carries the scope and support note.
-4. Give a verdict: **PASS** with exit 0, **PASS WITH WARNINGS** with exit 1, **FAIL** with
-   exit 2 or no proof written.
-5. On **FAIL**, go back to stage 03 and say what the report names. Do not edit the
+5. Give a verdict from the validation exit code: **PASS** with 0; **PASS WITH WARNINGS** with
+   1 when every warning has its reason from stage 03; **FAIL** with 2, with no proof written,
+   or with a warning that has no reason.
+6. On **FAIL**, go back to stage 03 and say what the report names. Do not edit the
    specification from this stage.
-6. Leave the **Human review** list unticked. It is the person's to tick.
+7. Leave the **Human review** list unticked. It is the person's to tick.
 
 ## Outputs
 

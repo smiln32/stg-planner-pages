@@ -17,7 +17,9 @@ of the work and what to do next. Why things are the way they are is in
   05 to know the checked specification was the exported one, stale downstream files on a
   revision, stage 04 missing the inputs its report needs, an undefined warning note in
   stage 03, a wrong relative path in the report template, and two document claims. All
-  seven are corrected; the export gate is still contract-only.
+  seven are corrected. A second read found two more, also corrected: stage 04 took its
+  verdict from generation, which exits 0 even with warnings, and a clean revision could
+  leave an old warning note for stage 04 to read. The export gate is still contract-only.
 
 ## Rename to STG Planner Pages, 2026-10-29
 

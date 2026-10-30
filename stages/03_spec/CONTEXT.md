@@ -31,7 +31,8 @@ Run commands from the project root.
 4. Fill each page to y=980 or lower without crossing y=1030. Writing space is content.
 5. Validate, and fix every finding. A warning may stay only when fixing it would break the
    plan; then write `output/<slug>.warnings.md` with the warning word for word and why it
-   stays. Stage 04 reads that file. Do not write it when validation is clean.
+   stays. Stage 04 reads that file. When validation is clean, delete any `<slug>.warnings.md`
+   an earlier run left; when the warnings change, rewrite it so it matches the validator.
 
    ```bash
    python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
