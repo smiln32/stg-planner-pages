@@ -12,7 +12,6 @@ htmlcov/
 .uv-python/
 
 # Generated planner output
-shared/examples/ci-output.html
 *.generated.html
 /output/
 dist/

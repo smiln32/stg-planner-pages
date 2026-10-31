@@ -168,6 +168,9 @@ assets/                        README preview images and approved design referen
 HOW_IT_WORKS.md                Plain-language setup and operating guide
 DECISIONS.md                   Why things are the way they are
 HANDOFF.md                     What comes next
+RIGHTS_AND_ATTRIBUTION.md      Ownership of the original assets and third-party notices
+LICENSE                        MIT
+.github/workflows/             GitHub Actions validation
 ```
 
 ## Contributing

@@ -7,9 +7,9 @@ next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
 ## State
 
 - The repository lives at `github.com/smiln32/stg-planner-pages`, public, created
-  2026-10-30. `main` is at 74aa097 and CI passed on it. The `icm-structure` branch is ahead
-  of `main` by the review fixes of 2026-10-30, listed below, and two handoff updates. Merge
-  it into `main` locally, push, and delete the branch.
+  2026-10-30. `main` is at c5b7516 and matches the remote. The `icm-structure` branch,
+  which carried the review fixes of 2026-10-30 listed below, has been merged into `main`
+  and deleted.
 - The ICM structure is in place and `tests/test_stages.py` holds it. The walk in
   `records/icm-audit.md` passes.
 - No planner has been taken through the five stages yet. Every stage's `output/` holds only
@@ -45,10 +45,11 @@ next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
 2. **Enforce the export gate in code**, if the cold walk shows an assistant ticking
    **Approved for export** itself. A small command that reads the check report, compares
    the hash and refuses to generate unless the line is ticked would do it.
-3. **`_config/design-system.md` has drifted from the Studio.** Of seven colour tokens
-   sampled, three do not appear in `studio/styles.css`, and the palette specimen in
-   `assets/design/working-atelier-palette.png` shows heading sizes and gutters that differ
-   from the file's tokens. Bring the table back in line with the stylesheet, or the
+3. **`_config/design-system.md` has drifted from the Studio.** Four of its fourteen colour
+   tokens (`canvas`, `surface`, `lavender`, `blush`) do not appear in `studio/styles.css`,
+   the stylesheet uses eleven colours the token table does not list, and the palette
+   specimen in `assets/design/working-atelier-palette.png` shows heading sizes and gutters
+   that differ from the file's tokens. Bring the table back in line with the stylesheet, or the
    stylesheet with the table; the file now says the tokens win over the pictures.
 4. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
    "My My Focus"; the default document title is still "Canva Planner Set" in

@@ -274,7 +274,12 @@ planner_factory.py             Generator and validator
 planner_studio.py              Local server behind Planner Studio
 studio/                        Planner Studio
 tests/                         Automated unit tests
-assets/                        Repository preview images
+assets/                        Repository preview images and approved design references
+HOW_IT_WORKS.md                This guide
+DECISIONS.md                   Why things are the way they are
+HANDOFF.md                     What comes next
+RIGHTS_AND_ATTRIBUTION.md      Ownership of the original assets and third-party notices
+LICENSE                        MIT
 .github/workflows/             GitHub Actions validation
 ```
 
@@ -286,7 +291,7 @@ From the repository root:
 python -m unittest discover -s tests -v
 ```
 
-The test suite checks example validation, exact page structure, overlap detection, duplicate concepts, starter-file behavior, and semantic version formatting.
+The test suite checks example validation, exact page structure, overlap detection, duplicate concepts, invalid geometry, starter-file behavior, semantic version formatting, the Studio's assets and health endpoint, and the ICM structure: that every stage has its contract, that every path a contract names exists, and that the router names every stage.
 
 GitHub Actions runs these checks automatically after every push to `main` and for pull requests. It also validates the basic and full depression specifications and exercises the CLI starter workflow.
 

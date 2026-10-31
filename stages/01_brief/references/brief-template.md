@@ -11,7 +11,7 @@ where the person has not said; do not guess.
 | Topic | One line: what the planner is about |
 | Who it is for | The person who will use it, in their own situation, not a diagnosis |
 | What it should help them do | One or two verbs: notice, choose, plan, track, reflect, act |
-| Page count | A whole number. The examples run from two to twelve |
+| Page count | A whole number. The examples run from two to ten |
 | Tone | How it should read, in the person's words if they gave any |
 | Theme colour | A hex colour for the page header, or `default` for `#b2c6b1` |
 | Sensitive topic | `yes` or `no`. Yes when it touches mental health, trauma, disability, medication, grief, addiction or crisis |
