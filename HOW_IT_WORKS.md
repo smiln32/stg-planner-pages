@@ -6,7 +6,7 @@ STG Planner Pages is a small Python-based system for creating polished, printabl
 
 You describe a planner set in JSON: its title, page concepts, section positions, prompts, writing areas, checklists, choices, and tables. The factory validates that description and converts it into a self-contained HTML document. Each generated page is exactly 816 × 1056 pixels, representing an 8.5 × 11-inch US Letter page.
 
-The output uses ordinary HTML text, borders, lines, checkboxes, and tables instead of flattened images. This makes the pages suitable for browser review, printing, and import into Canva, where supported elements can remain editable.
+The output uses ordinary HTML text, borders, lines, checkboxes, and tables instead of flattened images. This makes the pages suitable for browser review and crisp printing, and keeps them editable as HTML.
 
 ## What the factory does
 
@@ -23,7 +23,7 @@ The factory can:
 - Create a ready-to-edit starter specification for any topic
 - Validate a specification without generating output
 
-It does not automatically upload files to Canva. Canva import and final visual verification remain separate human-reviewed steps.
+It does not produce the PDF itself. Printing to PDF and final visual verification remain separate human-reviewed steps.
 
 ## How it works
 
@@ -33,7 +33,7 @@ The workflow has five stages:
 2. **Create a JSON specification.** Define the planner set, pages, concepts, positioned blocks, and response formats.
 3. **Validate the specification.** The factory checks geometry, page use, overlap, repeated concepts, and repeated wording.
 4. **Generate HTML.** Valid JSON is rendered as one self-contained HTML document containing all planner pages.
-5. **Review and import.** Open the HTML in a browser, inspect it at full and print size, correct any issues, and optionally import it into Canva.
+5. **Review and print.** Open the HTML in a browser, inspect it at full and print size, correct any issues, and print it to PDF.
 
 ```text
 Topic and audience
@@ -44,7 +44,7 @@ Layout and content validation
         ↓
 Editable US Letter HTML pages
         ↓
-Browser review → Canva import → final verification
+Browser review → print to PDF → final verification
 ```
 
 ## What is needed
@@ -61,7 +61,6 @@ The generator uses only the Python standard library. No third-party Python packa
 
 ### Optional
 
-- A Canva account, if you want to import and continue editing the generated pages in Canva
 - Git, if you want to clone the repository or track your changes
 - An AI assistant, if you want help planning page concepts or drafting a JSON specification
 
@@ -242,19 +241,19 @@ Before importing or publishing:
 
 A file that generates successfully is not automatically a finished planner. Visual and editorial review are required.
 
-## Canva workflow
+## Printing to PDF
 
 After the browser review:
 
-1. Create or open a US Letter design in Canva.
-2. Import the generated HTML using the Canva workflow available to your account.
+1. Open the generated HTML in the browser you will print from.
+2. Print to PDF at US Letter, with no margins and background graphics turned on.
 3. Confirm the expected page count.
-4. Inspect every imported page rather than relying only on thumbnails.
-5. Verify that text, lines, boxes, checkboxes, and tables remain editable where expected.
-6. Correct any font substitution, clipping, alignment, or import changes.
-7. Save or duplicate the verified Canva design before making experimental edits.
+4. Inspect every page of the PDF rather than relying on thumbnails.
+5. Check that lines, boxes, checkboxes, and table borders printed completely.
+6. Correct any font substitution, clipping, or alignment change in the specification, then regenerate and print again.
+7. Keep the HTML and JSON beside the PDF so the set can be revised later.
 
-Canva import behavior can change, so the actual imported design must always be checked.
+Print output can differ between browsers, so the actual PDF must always be checked.
 
 ## Working with an AI assistant
 
@@ -313,9 +312,9 @@ Read each warning in the terminal. A warning usually indicates an underfilled pa
 
 Correct invalid coordinates, page bounds, overlaps, missing pages, repeated concepts, or other reported errors. Error exit code `2` means the specification should not be treated as ready.
 
-### The Canva import looks different
+### The printed PDF looks different
 
-Check for font substitution and altered spacing. Compare the imported design with the browser-rendered HTML and adjust the specification or Canva design as needed.
+Check that the print dialog is set to US Letter with no margins and background graphics on. Compare the PDF with the browser-rendered HTML and adjust the specification as needed. A different browser may print more faithfully.
 
 ## Mental-health and wellness planners
 
@@ -325,4 +324,4 @@ Health-related planners require careful human review. Content involving mental h
 
 ## Summary
 
-To use STG Planner Pages successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path into Canva. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.
+To use STG Planner Pages successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path to a printed PDF. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.

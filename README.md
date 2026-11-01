@@ -2,7 +2,7 @@
 
 [![Validate STG Planner Pages](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml/badge.svg)](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml) [![Release](https://img.shields.io/badge/release-v1.1.0-6f8f72)](https://github.com/smiln32/stg-planner-pages/releases/tag/v1.1.0) [![License: MIT](https://img.shields.io/badge/license-MIT-7b9fb3.svg)](LICENSE)
 
-STG Planner Pages is a specification-driven toolkit for creating polished, printable planner pages for nearly any topic. It converts structured JSON into editable, Canva-importable HTML sized precisely for US Letter pages.
+STG Planner Pages is a specification-driven toolkit for creating polished, printable planner pages for nearly any topic. It converts structured JSON into print-ready HTML sized precisely for US Letter pages, which a browser prints to PDF.
 
 The project combines a consistent visual system with guidance for writing supportive, useful, and non-repetitive prompts. Each planner page is designed around one clear concept, with response formats and layouts chosen to match its purpose.
 
@@ -22,7 +22,6 @@ The project combines a consistent visual system with guidance for writing suppor
 
 - Python 3.9 or newer
 - A modern web browser for reviewing generated HTML
-- A Canva account if you want to import and edit the finished pages in Canva
 
 No third-party Python packages are required.
 
@@ -34,7 +33,7 @@ Planner Studio is the visual, local-first way to create a complete planner witho
 python planner_studio.py
 ```
 
-The studio opens at `http://127.0.0.1:8765`. Drafts are saved in that browser on your computer. Nothing is uploaded to a service or account. Use **Download editable project** to keep a portable JSON backup and **Download finished HTML** for Canva-ready output.
+The studio opens at `http://127.0.0.1:8765`. Drafts are saved in that browser on your computer. Nothing is uploaded to a service or account. Use **Download editable project** to keep a portable JSON backup and **Download finished HTML** for the print-ready pages.
 
 Studio features include blueprint recommendations, page sequencing, a full-page preview, adjustable side panels, snap-to-grid movement by pointer or keyboard, undo and redo, local draft saving, production notes, validation, and HTML/JSON export.
 
@@ -52,7 +51,7 @@ python planner_factory.py --version
 
 ## Complete guide
 
-For a plain-language explanation of the system, requirements, setup, commands, validation, and Canva workflow, read [`HOW_IT_WORKS.md`](HOW_IT_WORKS.md). AI assistants start at [`CLAUDE.md`](CLAUDE.md) and [`CONTEXT.md`](CONTEXT.md): the repository is laid out as an Interpretable Context Methodology (ICM) workspace, and the planner build is five stage folders under [`stages/`](stages/).
+For a plain-language explanation of the system, requirements, setup, commands, validation, and printing to PDF, read [`HOW_IT_WORKS.md`](HOW_IT_WORKS.md). AI assistants start at [`CLAUDE.md`](CLAUDE.md) and [`CONTEXT.md`](CONTEXT.md): the repository is laid out as an Interpretable Context Methodology (ICM) workspace, and the planner build is five stage folders under [`stages/`](stages/).
 
 ## Quick start
 
@@ -61,7 +60,7 @@ For a plain-language explanation of the system, requirements, setup, commands, v
 3. Read [`references/DESIGN_STANDARD.md`](references/DESIGN_STANDARD.md) for the required visual and layout system.
 4. Copy [`shared/planner_spec_template.json`](shared/planner_spec_template.json) and replace the sample content with your planner topic and pages.
 5. Give every page a distinct `concept` and define its content blocks.
-6. Validate the specification, generate the HTML, and inspect every page before importing it into Canva.
+6. Validate the specification, generate the HTML, and inspect every page before printing it.
 
 Generate a planner:
 
@@ -121,7 +120,7 @@ Every page should:
 - Provide practical writing space
 - Avoid repeating wording or composition from nearby pages
 - Move gently from noticing toward a choice, support, or feasible next step
-- Remain legible and editable after Canva import
+- Remain legible in print preview and on paper
 
 The full JSON format is documented in [`references/SPECIFICATION.md`](references/SPECIFICATION.md). Visual requirements are documented in [`references/DESIGN_STANDARD.md`](references/DESIGN_STANDARD.md).
 
@@ -137,17 +136,17 @@ This project can help structure supportive reflection, but it is not a clinical 
 
 Planners addressing mental health, trauma, disability, medication, or other sensitive health subjects should be reviewed by an appropriately qualified professional before publication. Crisis-related products should direct users to suitable local emergency or crisis resources and trusted human support.
 
-## Canva workflow
+## Printing to PDF
 
 The generator creates ordinary HTML elements rather than flattened page images. After generation:
 
-1. Review the HTML at full size and print scale.
+1. Review the HTML at full size and in the browser's print preview.
 2. Correct clipping, overflow, cramped writing areas, or weak visual hierarchy.
-3. Import the finished HTML into a US Letter Canva design.
-4. Confirm the page count and inspect every imported page.
-5. Verify that text and structural elements remain editable.
+3. Print to PDF at US Letter with no margins and background graphics turned on.
+4. Confirm the page count and inspect every page of the PDF.
+5. Keep the HTML and JSON beside the PDF so the set can be revised.
 
-Canva import behavior may change over time, so always test the actual imported design before treating it as finished.
+Print output differs between browsers, so always check the actual PDF before treating it as finished.
 
 ## Repository structure
 
@@ -175,7 +174,7 @@ LICENSE                        MIT
 
 ## Contributing
 
-Contributions that improve validation, accessibility, Canva editability, documentation, content types, or layout precision are welcome. Keep changes consistent with the content and design standards and include a representative example when introducing a new content type.
+Contributions that improve validation, accessibility, print fidelity, documentation, content types, or layout precision are welcome. Keep changes consistent with the content and design standards and include a representative example when introducing a new content type.
 
 ## License
 

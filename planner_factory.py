@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Generate full-page, Canva-importable US Letter planner HTML from JSON.
+"""Generate full-page, print-ready US Letter planner HTML from JSON.
 
-The output uses ordinary HTML text, divs, borders, checkboxes, lines, and tables
-so Canva can import the design as editable elements rather than a flat page image.
+The output uses ordinary HTML text, divs, borders, checkboxes, lines, and tables,
+so the pages print crisply from a browser and stay editable as HTML.
 
 Usage:
     python planner_factory.py planner_spec.json output.html
@@ -225,7 +225,7 @@ def validate(spec: dict[str, Any]) -> list[str]:
 
 
 def render(spec: dict[str, Any]) -> str:
-    set_title = e(spec.get("set_title", "Canva Planner Set"))
+    set_title = e(spec.get("set_title", "Planner Set"))
     footer_label = e(spec.get("footer_label", "Planner"))
     pages = []
     for idx, page in enumerate(spec.get("pages", []), start=1):
@@ -253,7 +253,7 @@ def render(spec: dict[str, Any]) -> str:
 def starter_spec(topic: str) -> dict[str, Any]:
     topic = topic.strip() or "My"
     return {
-        "set_title": f"{topic} Planner - Full Page Canva",
+        "set_title": f"{topic} Planner",
         "footer_label": f"Simplify to Glorify | {topic} Planner",
         "pages": [
             {
@@ -274,7 +274,7 @@ def starter_spec(topic: str) -> dict[str, Any]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate and validate Canva-importable planner pages.")
+    parser = argparse.ArgumentParser(description="Generate and validate printable planner pages.")
     parser.add_argument("spec", nargs="?", type=Path, help="Planner JSON specification")
     parser.add_argument("output", nargs="?", type=Path, help="Output HTML path")
     parser.add_argument("--validate-only", action="store_true", help="Validate without writing HTML")

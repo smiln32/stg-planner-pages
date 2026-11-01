@@ -79,3 +79,15 @@ Those became tokens. The page preview inside the editor copies the page engine's
 is not held to the tokens; `planner_factory.py` owns those. `tests/test_design_tokens.py`
 fails on any colour in the stylesheet that is neither a token nor an engine colour, and on
 any token nothing in `studio/` uses.
+
+## The product
+
+**Canva is gone; the deliverable is a printed PDF.** Decided by the owner 2026-10-31. The
+product began as a Canva import tool and is pivoting to topical Bible studies, sold and
+printed as PDF, so every Canva reference, workflow section and default title was removed.
+The engine still renders HTML, because a browser's print dialog turns it into a US Letter
+PDF faithfully and the HTML stays editable; the `data-document-role="page"` marker on each
+section stays because the tests and CI count pages by it. Scripture will be quoted from the
+NASB 2020 (The Lockman Foundation), up to 500 verses per work under its gratis-use policy,
+with a notice citing 2020 only. The exact notice wording and the policy's other conditions
+are to be confirmed at lockman.org before the first study ships.

@@ -43,6 +43,11 @@ are is in [`DECISIONS.md`](DECISIONS.md).
   input sizes, and a note that the page preview's colours belong to the engine.
   `tests/test_design_tokens.py` fails if the stylesheet uses a colour the token table does
   not name, or names one nothing in `studio/` uses.
+- On 2026-10-31 every Canva reference was removed. The deliverable is now a PDF printed from
+  the browser; the HTML is the generation format and stays editable. The
+  `data-document-role="page"` marker on each section stays because the tests and CI count
+  pages by it. The owner is pivoting the product toward topical Bible studies quoting the
+  NASB 2020; `DECISIONS.md` records the terms. No study has been briefed yet.
 
 ## Next
 
@@ -61,7 +66,5 @@ are is in [`DECISIONS.md`](DECISIONS.md).
    every generated page and the approved reference HTML in `shared/examples/`, so if the
    engine moves, regenerate those and look at them.
 4. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
-   "My My Focus"; the default document title is still "Canva Planner Set" in
-   `planner_factory.py` and `references/SPECIFICATION.md`, so change both or neither;
-   `planner_studio.py` accepts `--host 0.0.0.0` with no authentication and its help text
-   does not say so.
+   "My My Focus"; `planner_studio.py` accepts `--host 0.0.0.0` with no authentication and
+   its help text does not say so.

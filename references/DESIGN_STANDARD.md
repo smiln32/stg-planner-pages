@@ -1,4 +1,4 @@
-﻿# Full-Page Canva Planner Design Standard
+﻿# Full-Page Planner Design Standard
 
 ## Canvas and geometry
 
@@ -11,7 +11,7 @@
 
 ## Typography
 
-- Display titles: Georgia (Canva-safe serif fallback), 23 px, bold, balanced, never all-caps by default.
+- Display titles: Georgia (serif, with Times New Roman fallback), 23 px, bold, balanced, never all-caps by default.
 - UI and writing prompts: Aptos/Helvetica Neue/Arial, 8.5–11 px depending on role.
 - Section heads: sentence case, 10.5–11 px, bold. Avoid tracked uppercase scaffolding.
 - Use no more than two type families. Keep contrast high and never use pale gray for instructional text.
@@ -23,7 +23,7 @@
 - Sage #b2c6b1 / #dfe9df; lavender #c6b5c8 / #e8dfea; slate #7b9fb3 / #dce8ee; blush #e6d7d3 / #f0e6e2.
 - Use color to group and orient, not decorate. One dominant page theme plus restrained supporting fills.
 - Complete 10–12 px corners, consistent 1.15–1.2 px borders, no shadows, gradients, textures, or clipped decoration.
-- Everything must remain editable after Canva import.
+- Everything is text, borders and tables; no page is a flattened image.
 
 ## Page composition
 
@@ -38,5 +38,5 @@ Read `CONTENT_GUIDE.md` before writing prompts. Use `custom_html` only when supp
 - Content reaches y=980–1030 unless whitespace is intentionally documented.
 - No repeated page concepts, section titles, or prompts.
 - Text fits at print size; writing areas are practically usable.
-- Correct page count and editable Canva import verified visually.
+- Correct page count verified in print preview.
 - Health-related content includes appropriate scope language and professional review before sale/publication.

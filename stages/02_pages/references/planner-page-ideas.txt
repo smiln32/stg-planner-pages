@@ -197,4 +197,4 @@ Add one of these lines to the end of any prompt:
 
 “Include both emotional support pages and practical planning pages.”
 
-“Keep the ideas easy for me to turn into Canva templates.”
+“Keep the ideas easy for me to turn into printable templates.”

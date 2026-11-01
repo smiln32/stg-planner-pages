@@ -19,7 +19,7 @@ python planner_factory.py my-planner.json output.html
 
 | Field | Required | Type | Purpose |
 |---|---:|---|---|
-| `set_title` | No | string | HTML document title. Defaults to `Canva Planner Set`. |
+| `set_title` | No | string | HTML document title. Defaults to `Planner Set`. |
 | `footer_label` | No | string | Left side of every page footer. Defaults to `Planner`. |
 | `pages` | Yes | array | Ordered list of planner pages. At least one page is required. |
 
@@ -28,7 +28,7 @@ python planner_factory.py my-planner.json output.html
 | Field | Required | Type | Purpose |
 |---|---:|---|---|
 | `concept` | Recommended | string | The page's single useful job. Must be unique across the set. |
-| `label` | No | string | Page label stored for Canva/import workflows. Defaults to the page title. |
+| `label` | No | string | Page label, written to the page section as a `data-label` attribute. Defaults to the page title. |
 | `title` | No | string | Main page heading. |
 | `subtitle` | No | string | Short supportive explanation beneath the title. |
 | `theme` | No | CSS color | Header color. Defaults to `#b2c6b1`. |

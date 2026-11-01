@@ -9,7 +9,7 @@
 | 4 (working) | The specification | `../03_spec/output/<slug>.json` | Full file |
 | 4 (working) | The check report, approved | `../04_check/output/<slug>.check.md` | Header (the hash), Verdict, Decision |
 | 3 (reference) | What each exported file is for | `references/deliverables.md` | Full file |
-| 3 (reference) | The steps after export | `../../HOW_IT_WORKS.md` | Canva workflow |
+| 3 (reference) | The steps after export | `../../HOW_IT_WORKS.md` | Printing to PDF |
 
 ## Process
 
@@ -34,8 +34,8 @@ Run commands from the project root.
 
 4. Copy the specification beside it, so the export folder holds everything the creator
    needs: `stages/03_spec/output/<slug>.json` to `stages/05_export/output/<slug>.json`.
-5. Tell the person what was written and where, and point them at the Canva workflow for the
-   import and the checks that follow it. If the report's Sensitive topic section says yes,
+5. Tell the person what was written and where, and point them at Printing to PDF for the
+   print and the checks that follow it. If the report's Sensitive topic section says yes,
    repeat that the set still needs review by an appropriately qualified professional before
    it is published or sold. Export does not replace that review.
 
@@ -43,11 +43,11 @@ Run commands from the project root.
 
 | Artifact | Location | Format |
 |---|---|---|
-| The finished planner | `output/<slug>.html` | HTML, self-contained, ready for Canva import |
+| The finished planner | `output/<slug>.html` | HTML, self-contained, ready to print to PDF |
 | The editable project | `output/<slug>.json` | JSON, which Planner Studio can open again |
 
 ## Human gate
 
-The person imports the HTML into Canva and checks every page there before treating the
+The person prints the HTML to PDF and checks every page of it before treating the
 planner as finished. A planner about mental health, trauma, disability, medication or crisis
 is also reviewed by a qualified professional before publication. This is the end of the run.

@@ -1,9 +1,9 @@
 {
-    "set_title":  "TOPIC Planner - Full Page Canva",
+    "set_title":  "TOPIC Planner",
     "footer_label":  "Simplify to Glorify | TOPIC Planner",
     "pages":  [
                   {
-                      "label":  "Page label for Canva",
+                      "label":  "Page label",
                       "title":  "PAGE TITLE",
                       "subtitle":  "A short, calm explanation of the page.",
                       "theme":  "#b2c6b1",

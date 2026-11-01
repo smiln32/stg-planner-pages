@@ -1,7 +1,7 @@
 # Instructions for Claude
 
 **Where am I?** In STG Planner Pages: software that turns a JSON planner specification into
-printable, Canva-importable US Letter pages. `planner_factory.py` is the engine, `studio/` is
+printable US Letter pages. `planner_factory.py` is the engine, `studio/` is
 Planner Studio, the browser application, and `stages/` is the same planner build laid out as
 five folders an assistant can walk one at a time.
 

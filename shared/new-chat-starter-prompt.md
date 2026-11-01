@@ -4,7 +4,7 @@ For a chatbot that cannot read this folder. An assistant that can should start a
 
 ---
 
-Create a complete, editable Canva planner set about: **[TOPIC]**.
+Create a complete, printable planner set about: **[TOPIC]**.
 
 Read `references/CONTENT_GUIDE.md`, then `references/DESIGN_STANDARD.md`, then inspect the approved reference HTML in `shared/examples/depression/approved-reference.html`. Treat those files as requirements.
 
@@ -23,10 +23,10 @@ Design requirements:
 
 - Exactly 816 x 1056 px per page, full safe-area use, precise aligned geometry, harmonious 14 px gutters, and no overlaps.
 - Use the typography and palette in `references/DESIGN_STANDARD.md`; sentence-case section labels; no decorative clutter.
-- Keep all content editable after Canva import. Use supported content types before `custom_html`.
+- Keep all content as text, borders and tables. Use supported content types before `custom_html`.
 - Write a complete JSON spec from `shared/planner_spec_template.json`, run validation, generate HTML, and correct every error, collision, overflow, underfill, and repetition warning.
-- Visually inspect every rendered page at full size and print scale. Then import to Canva and verify page count, clipping, editability, and complete corners.
-- Give me the Canva edit link first when Canva access is available. Otherwise provide the finished HTML and JSON and state exactly what remains to import.
+- Visually inspect every rendered page at full size and in print preview. Then print to PDF and verify page count, clipping, and complete corners.
+- Provide the finished HTML and JSON and state exactly what remains to check before printing.
 
 Set details:
 
