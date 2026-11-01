@@ -2,9 +2,11 @@
 
 [![Validate STG Planner Pages](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml/badge.svg)](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml) [![Release](https://img.shields.io/badge/release-v1.1.0-6f8f72)](https://github.com/smiln32/stg-planner-pages/releases/tag/v1.1.0) [![License: MIT](https://img.shields.io/badge/license-MIT-7b9fb3.svg)](LICENSE)
 
-STG Planner Pages is a specification-driven toolkit for creating polished, printable planner pages for nearly any topic. It converts structured JSON into print-ready HTML sized precisely for US Letter pages, which a browser prints to PDF.
+STG Planner Pages turns a JSON specification into printable US Letter pages. It renders print-ready HTML at exactly 816 × 1056 pixels, validates the layout and the wording, and a browser prints the result to PDF.
 
-The project combines a consistent visual system with guidance for writing supportive, useful, and non-repetitive prompts. Each planner page is designed around one clear concept, with response formats and layouts chosen to match its purpose.
+It was built for wellness planners and is being turned into a tool for **topical Bible studies**: a study is a set of sessions, each a few pages that take the reader through a passage and into application. The engine, the validator, Planner Studio and the five-stage build all carry over. The study-specific pieces, listed under [Where it is going](#where-it-is-going), do not exist yet, so the tool builds planners exactly as documented here until they do.
+
+Each page is designed around one clear concept, with response formats and layouts chosen to match its purpose.
 
 ![Two generated planner pages showing the toolkit's spacing, typography, checklists, and writing areas](assets/planner-preview.png)
 
@@ -17,6 +19,15 @@ The project combines a consistent visual system with guidance for writing suppor
 - Content guidance for encouraging reflection without shame, pressure, forced positivity, or unnecessary repetition
 - Reusable JSON specifications for producing complete planner sets
 - Example specifications and approved visual references
+
+## Where it is going
+
+The next product is a topical Bible study: six or so sessions on one subject, printed as a PDF for individual or small-group use. What that needs, none of it built yet:
+
+- **Scripture from the NASB 2020** (New American Standard Bible, The Lockman Foundation). Up to 500 verses may be quoted in one work under the publisher's gratis-use policy, and the copyright notice cites 2020 only. The check stage will count verses and the export will print the notice.
+- **Study content types:** a passage with observation space, a cross-reference table, a memory-verse card, numbered discussion questions, and a prayer page.
+- **A session structure that repeats by design**, so the validator's uniqueness rules apply within a session rather than across the whole set.
+- **A content guide for studies:** observation, interpretation, application, in that order, with questions that send the reader back to the text.
 
 ## Requirements
 
@@ -120,6 +131,7 @@ Every page should:
 - Provide practical writing space
 - Avoid repeating wording or composition from nearby pages
 - Move gently from noticing toward a choice, support, or feasible next step
+- On a study page, send the reader to the passage before asking for a response
 - Remain legible in print preview and on paper
 
 The full JSON format is documented in [`references/SPECIFICATION.md`](references/SPECIFICATION.md). Visual requirements are documented in [`references/DESIGN_STANDARD.md`](references/DESIGN_STANDARD.md).
@@ -130,11 +142,11 @@ An assistant that can read this folder starts at [`CLAUDE.md`](CLAUDE.md) and wa
 
 AI-generated planner content and layouts still require human review. Inspect wording, usefulness, visual balance, cultural fit, accessibility, and every rendered page before publishing or selling a set.
 
-## Mental-health and wellness content
+## Sensitive content
 
 This project can help structure supportive reflection, but it is not a clinical tool and does not provide diagnosis, treatment, crisis care, or medical advice.
 
-Planners addressing mental health, trauma, disability, medication, or other sensitive health subjects should be reviewed by an appropriately qualified professional before publication. Crisis-related products should direct users to suitable local emergency or crisis resources and trusted human support.
+Planners and studies addressing mental health, trauma, disability, medication, grief, addiction, or other sensitive subjects should be reviewed by an appropriately qualified professional before publication. Crisis-related products should direct users to suitable local emergency or crisis resources and trusted human support.
 
 ## Printing to PDF
 

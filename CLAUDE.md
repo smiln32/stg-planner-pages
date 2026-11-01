@@ -1,9 +1,11 @@
 # Instructions for Claude
 
-**Where am I?** In STG Planner Pages: software that turns a JSON planner specification into
-printable US Letter pages. `planner_factory.py` is the engine, `studio/` is
-Planner Studio, the browser application, and `stages/` is the same planner build laid out as
-five folders an assistant can walk one at a time.
+**Where am I?** In STG Planner Pages: software that turns a JSON specification into
+printable US Letter pages, printed to PDF from a browser. It builds planners today and is
+being turned into a tool for topical Bible studies. The study content types do not exist
+yet, so until they do the stages build planners as written. `planner_factory.py` is the
+engine, `studio/` is Planner Studio, the browser application, and `stages/` is the same
+build laid out as five folders an assistant can walk one at a time.
 
 This workspace follows the Interpretable Context Methodology (ICM) of Jake Van Clief and
 David McDermott (https://arxiv.org/abs/2603.16021). This file is Layer 0. [`CONTEXT.md`](CONTEXT.md)
@@ -65,8 +67,13 @@ syntax yourself. There is no linter or formatter; do not add one without asking.
   explains them. Change both or neither.
 - **`planner_studio.py` and `studio/app.js` are dense on purpose**, semicolon-joined and
   one-line. Do not reformat them.
-- **Sensitive topics.** A planner about mental health, trauma, disability, medication or
-  crisis is flagged for professional review before publication. Every stage says so.
+- **Sensitive topics.** A planner or study about mental health, trauma, disability,
+  medication, grief, addiction or crisis is flagged for professional review before
+  publication. Every stage says so.
+- **Scripture is the NASB 2020 only.** Quote from the New American Standard Bible 2020 (The
+  Lockman Foundation), keep one work under 500 verses, and cite 2020 alone in the copyright
+  notice. Do not quote or bundle any other translation, and do not paraphrase the notice:
+  copy the publisher's wording once it is confirmed at lockman.org.
 
 ## Working style here
 
