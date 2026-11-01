@@ -66,3 +66,16 @@ at `output/` itself, so a stale export cannot pass for progress, and nothing is 
 **No tool enforces the export gate.** The sibling's export command refuses an unapproved
 check; here stage 05's contract makes the same demand of the assistant and `HANDOFF.md`
 lists the enforcement as a possible next step.
+
+## The Studio
+
+**The design-system tokens are the authority for the Studio, and a test holds them.** Decided
+2026-10-31, when `_config/design-system.md` and `studio/styles.css` were reconciled. Where
+they disagreed, the document won for canvas (`#ececec`, which the palette specimen and the
+page engine share) and the stylesheet won where its value was a deliberate accessibility or
+density choice: Focus Blue `#275f7b` rather than Layout Slate for focus rings, because slate
+does not reach contrast on white, and 8px × 13px button padding with a 40px minimum height.
+Those became tokens. The page preview inside the editor copies the page engine's colours and
+is not held to the tokens; `planner_factory.py` owns those. `tests/test_design_tokens.py`
+fails on any colour in the stylesheet that is neither a token nor an engine colour, and on
+any token nothing in `studio/` uses.

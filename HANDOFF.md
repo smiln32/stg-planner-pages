@@ -1,8 +1,7 @@
 # Handoff
 
 Written 2026-10-29, when the repository was laid out as an ICM workspace; brought up to date
-2026-10-30 after a review of the root files. It holds the state of the work and what to do
-next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
+2026-10-31. It holds the state of the work and what to do next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
 
 ## State
 
@@ -17,7 +16,7 @@ next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
 - The engine is unchanged in behaviour but for one fix: the overlap check in
   `planner_factory.py` raised `TypeError` on a numeric string coordinate such as `"28"`
   instead of reporting a finding. It now parses geometry once and compares integers, with a
-  test. The suite is twenty checks. CI compiles `planner_studio.py` as well, reads the
+  test. The suite is twenty-three checks. CI compiles `planner_studio.py` as well, reads the
   examples from `shared/examples/`, and carries the product's new name.
 - An independent review on 2026-10-29 found seven gaps in the contracts: no way for stage
   05 to know the checked specification was the exported one, stale downstream files on a
@@ -34,6 +33,15 @@ next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
   pictures in `assets/design/` are now cited from `_config/design-system.md`. Two local
   tags, v2.0.0 and v2.1.0, were left over from the old repository's history and were
   deleted; the remote has v1.0.0 and v1.1.0 only, matching the code.
+- On 2026-10-31 `_config/design-system.md` and `studio/styles.css` were reconciled. The
+  stylesheet's canvas went to `#ececec`, the value the document, the palette specimen and
+  the page engine share; its literal colours became tokens; two near-duplicate blues and
+  two greens collapsed into one each; and the preview footer took the engine's `#8c8c8c`.
+  The document gained the tokens the Studio needed (`ink-soft` corrected, `chrome-soft`,
+  `surface-soft`, `focus`, `sage-deep`, `error`), a hero type level, the real button and
+  input sizes, and a note that the page preview's colours belong to the engine.
+  `tests/test_design_tokens.py` fails if the stylesheet uses a colour the token table does
+  not name, or names one nothing in `studio/` uses.
 
 ## Next
 
@@ -45,12 +53,12 @@ next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
 2. **Enforce the export gate in code**, if the cold walk shows an assistant ticking
    **Approved for export** itself. A small command that reads the check report, compares
    the hash and refuses to generate unless the line is ticked would do it.
-3. **`_config/design-system.md` has drifted from the Studio.** Four of its fourteen colour
-   tokens (`canvas`, `surface`, `lavender`, `blush`) do not appear in `studio/styles.css`,
-   the stylesheet uses eleven colours the token table does not list, and the palette
-   specimen in `assets/design/working-atelier-palette.png` shows heading sizes and gutters
-   that differ from the file's tokens. Bring the table back in line with the stylesheet, or the
-   stylesheet with the table; the file now says the tokens win over the pictures.
+3. **The page engine and the page standard disagree on two colours.**
+   `references/DESIGN_STANDARD.md` gives block borders as `#606864` and rules as `#aeb7b2`;
+   `planner_factory.py` draws them `#5c5c5c` and `#b9b9b9`, and the Studio preview copies
+   the engine. Change the standard or the engine, not the Studio. Changing the engine alters
+   every generated page and the approved reference HTML in `shared/examples/`, so if the
+   engine moves, regenerate those and look at them.
 4. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
    "My My Focus"; the default document title is still "Canva Planner Set" in
    `planner_factory.py` and `references/SPECIFICATION.md`, so change both or neither;
