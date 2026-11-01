@@ -2,7 +2,7 @@
 
 ## Overview
 
-STG Planner Pages is a small Python-based system for creating polished, printable planner pages from structured JSON files.
+STG Planner Pages is a small Python-based system for creating polished, printable pages from structured JSON files. It was built for planners and is being turned into a tool for topical Bible studies. The study pieces, Scripture blocks from the NASB 2020, a repeating session structure and a verse count, are not built yet, so this guide describes the tool as it works today. The two program files will be renamed as part of that change; the commands below use their current names.
 
 You describe a planner set in JSON: its title, page concepts, section positions, prompts, writing areas, checklists, choices, and tables. The factory validates that description and converts it into a self-contained HTML document. Each generated page is exactly 816 × 1056 pixels, representing an 8.5 × 11-inch US Letter page.
 
@@ -316,12 +316,16 @@ Correct invalid coordinates, page bounds, overlaps, missing pages, repeated conc
 
 Check that the print dialog is set to US Letter with no margins and background graphics on. Compare the PDF with the browser-rendered HTML and adjust the specification as needed. A different browser may print more faithfully.
 
-## Mental-health and wellness planners
+## Sensitive content
 
 The factory can structure supportive reflection, but it is not a clinical tool and does not provide diagnosis, treatment, crisis care, or medical advice.
 
-Health-related planners require careful human review. Content involving mental health, trauma, disability, medication, or crisis topics should be reviewed by an appropriately qualified professional before publication. Never use a planner as a substitute for emergency or professional support.
+Planners and studies that touch mental health, trauma, disability, medication, grief, addiction, or crisis require careful human review by an appropriately qualified professional before publication. Never use a planner or a study as a substitute for emergency or professional support.
+
+## What is changing
+
+The next product is a topical Bible study: six or so sessions on one subject, each a few pages that take the reader through a passage and into application, printed as a PDF. Scripture will be quoted from the NASB 2020 under its publisher's quotation terms, the check stage will count the verses, and the export will print the copyright notice. The study content types, the session structure and the study content guide do not exist yet. [`README.md`](README.md) lists what is planned under "Where it is going", and [`HANDOFF.md`](HANDOFF.md) says what comes first.
 
 ## Summary
 
-To use STG Planner Pages successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path to a printed PDF. The design, content, and specification guides provide the standards needed to turn generated output into a polished planner set.
+To use STG Planner Pages successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path to a printed PDF. The design, content, and specification guides provide the standards needed to turn generated output into a polished set of pages.

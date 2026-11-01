@@ -7,9 +7,9 @@ are is in [`DECISIONS.md`](DECISIONS.md).
 ## State
 
 - The repository lives at `github.com/smiln32/stg-planner-pages`, public, created
-  2026-10-30. `main` is at c5b7516 and matches the remote. The `icm-structure` branch,
-  which carried the review fixes of 2026-10-30 listed below, has been merged into `main`
-  and deleted.
+  2026-10-30. `main` is at c9a9726 and matches the remote. The `drop-canva` branch holds the
+  Canva removal and the pivot documents of 2026-10-31, listed below; merge it into `main`,
+  push, and delete it.
 - The ICM structure is in place and `tests/test_stages.py` holds it. The walk in
   `records/icm-audit.md` passes.
 - No planner has been taken through the five stages yet. Every stage's `output/` holds only
@@ -46,25 +46,55 @@ are is in [`DECISIONS.md`](DECISIONS.md).
 - On 2026-10-31 every Canva reference was removed. The deliverable is now a PDF printed from
   the browser; the HTML is the generation format and stays editable. The
   `data-document-role="page"` marker on each section stays because the tests and CI count
-  pages by it. The owner is pivoting the product toward topical Bible studies quoting the
-  NASB 2020; `DECISIONS.md` records the terms. No study has been briefed yet.
+  pages by it.
+- The product is pivoting to topical Bible studies quoting the NASB 2020; `DECISIONS.md`
+  records the terms and `README.md`, `CLAUDE.md` and `HOW_IT_WORKS.md` describe the
+  direction. The stage contracts, `references/`, `shared/` and the Studio still speak only
+  of planners, which is accurate until the study build exists. No study has been briefed.
+  Doctrinal review was proposed and the owner declined it as a rule; do not add it to
+  `CLAUDE.md` or the contracts. The two program files keep their planner names until the
+  owner chooses new ones.
 
 ## Next
 
-1. **A cold walk.** Give an assistant only "make me a planner about X" and watch it go from
+1. **Rename the program files**, once the owner has chosen the names. `planner_factory.py`
+   and `planner_studio.py` are named for the old product; "Planner Studio" in
+   `_config/product.md`, the Studio's own title and the repository name are the same
+   decision. The rename is mechanical: `git mv` the two files, change the import in the
+   server, then update every reference in `tests/test_planner_factory.py` (sixteen),
+   `tests/test_design_tokens.py`, `.github/workflows/validate.yml`, `CLAUDE.md`,
+   `CONTEXT.md`, `README.md`, `HOW_IT_WORKS.md`, `references/SPECIFICATION.md`, the
+   contracts of stages 03, 04 and 05, `records/icm-audit.md`, `_config/design-system.md`,
+   `DECISIONS.md` and this file. Re-run the ICM audit walk afterwards, because the structure
+   changed.
+2. **The first study, through the stages as they are.** Give stage 01 a real study, six
+   sessions on one subject, and take it through stage 02 only. The plan will show which
+   pages the current blocks cannot express and how the whole-set uniqueness rule objects to
+   a session shape that repeats. The engine changes in item 3 should come out of that plan,
+   not out of a list.
+3. **The study build**, in the order the first study demands:
+   uniqueness per session rather than per set; the study content types (a passage with
+   observation space, a cross-reference table, a memory-verse card, numbered discussion
+   questions, a prayer page), each added to the engine, `references/SPECIFICATION.md` and an
+   example; a study content guide, observation then interpretation then application; a verse
+   count in stage 04 that fails above 500 and reports the proportion of the work that is
+   Scripture; the NASB 2020 notice printed by stage 05, with the wording copied from
+   lockman.org once; and a study example in `shared/examples/` to stand beside or replace the
+   wellness ones.
+4. **A cold walk.** Give an assistant only "make me a study about X" and watch it go from
    `CLAUDE.md` through all five stages without being told anything else. The contracts were
    written by the person who laid out the folders, not tried by a stranger. That is the real
    test of the structure. Include an interrupted revision and an edit to the specification
    after approval: those exercise the hash and the archive rule.
-2. **Enforce the export gate in code**, if the cold walk shows an assistant ticking
+5. **Enforce the export gate in code**, if the cold walk shows an assistant ticking
    **Approved for export** itself. A small command that reads the check report, compares
    the hash and refuses to generate unless the line is ticked would do it.
-3. **The page engine and the page standard disagree on two colours.**
+6. **The page engine and the page standard disagree on two colours.**
    `references/DESIGN_STANDARD.md` gives block borders as `#606864` and rules as `#aeb7b2`;
    `planner_factory.py` draws them `#5c5c5c` and `#b9b9b9`, and the Studio preview copies
    the engine. Change the standard or the engine, not the Studio. Changing the engine alters
    every generated page and the approved reference HTML in `shared/examples/`, so if the
    engine moves, regenerate those and look at them.
-4. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
+7. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
    "My My Focus"; `planner_studio.py` accepts `--host 0.0.0.0` with no authentication and
    its help text does not say so.
