@@ -55,5 +55,4 @@ next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
    "My My Focus"; the default document title is still "Canva Planner Set" in
    `planner_factory.py` and `references/SPECIFICATION.md`, so change both or neither;
    `planner_studio.py` accepts `--host 0.0.0.0` with no authentication and its help text
-   does not say so; the README's structure block omits `LICENSE`,
-   `RIGHTS_AND_ATTRIBUTION.md` and `.github/` while `HOW_IT_WORKS.md` lists `.github/`.
+   does not say so.
