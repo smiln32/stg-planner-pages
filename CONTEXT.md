@@ -43,7 +43,9 @@ assistant does them, with the same engine and the same rules.
 - **"Carry on with the planner called X"** → look in each stage's `output/` for files named
   `X.*`, not counting anything under `output/archive/`. The last stage that holds one is
   where the run stands.
-- **"Change the pages of X"** → `stages/02_pages/CONTEXT.md`, then run 03 to 05 again.
+- **"Change the pages of X"** → `stages/02_pages/CONTEXT.md`, then run 03 to 05 again. If
+  the change alters the page count or what the planner must include, it is a change to the
+  brief: go to `stages/01_brief/CONTEXT.md` first, then 02 to 05.
 - **"Change the wording or layout of X"** → `stages/03_spec/CONTEXT.md`, then 04 and 05 again.
 - **Before either revision begins:** in every later stage, move the files named `X.*` from
   `output/` into `output/archive/<YYYY-MM-DD>/` (add `-2`, `-3` for another revision the same

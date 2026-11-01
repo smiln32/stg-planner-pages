@@ -46,7 +46,9 @@ Run the command from the project root.
 4. Copy `references/check-report-template.md` to `output/<slug>.check.md`. Record the hash,
    the validation exit code and every finding, word for word. If `<slug>.warnings.md`
    exists, copy each reason beneath its warning. From the brief and the plan, record the
-   page count and the page that carries the scope and support note.
+   page count and the page that carries the scope and support note. From the specification,
+   name the blocks with the most rows for their height: the validator cannot see a clipped
+   row, so the report says where one would show first.
 5. Give a verdict from the validation exit code: **PASS** with 0; **PASS WITH WARNINGS** with
    1 when every warning has its reason from stage 03; **FAIL** with 2, with no proof written,
    or with a warning that has no reason.

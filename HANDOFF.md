@@ -58,6 +58,15 @@ are is in [`DECISIONS.md`](DECISIONS.md).
   every file. The browser's saved-draft key is unchanged so existing drafts still open. The
   repository was renamed on GitHub on 2026-11-01 and its URLs updated; the folder on disk is
   still `stg-planner-pages`, and nothing inside depends on that name.
+- On 2026-11-01 the cold walk was run: a fresh assistant given only "Make me a planner
+  about starting a vegetable garden" and nothing else, with the owner's answers relayed at
+  the gates. It routed itself to stage 01, stopped at every gate, left six brief fields
+  `TO DECIDE` and asked, never ticked **Approved for export**, caught a one-word edit made
+  to the specification after approval by the hash and refused to export, and on a page
+  change archived stages 03 to 05 before going back to the brief. The contracts held. Two
+  small gaps it exposed are closed: the router now sends a change of page count or
+  must-include back to stage 01, and the check report names the blocks where a clipped row
+  would show first. Enforcing the export gate in code is no longer on the list.
 
 ## Next
 
@@ -78,20 +87,12 @@ are is in [`DECISIONS.md`](DECISIONS.md).
    Scripture; the NASB 2020 notice printed by stage 05, with the wording copied from
    lockman.org once; and a study example in `shared/examples/` to stand beside or replace the
    wellness ones.
-4. **A cold walk.** Give an assistant only "make me a study about X" and watch it go from
-   `CLAUDE.md` through all five stages without being told anything else. The contracts were
-   written by the person who laid out the folders, not tried by a stranger. That is the real
-   test of the structure. Include an interrupted revision and an edit to the specification
-   after approval: those exercise the hash and the archive rule.
-5. **Enforce the export gate in code**, if the cold walk shows an assistant ticking
-   **Approved for export** itself. A small command that reads the check report, compares
-   the hash and refuses to generate unless the line is ticked would do it.
-6. **The page engine and the page standard disagree on two colours.**
+4. **The page engine and the page standard disagree on two colours.**
    `references/DESIGN_STANDARD.md` gives block borders as `#606864` and rules as `#aeb7b2`;
    `study_factory.py` draws them `#5c5c5c` and `#b9b9b9`, and the Studio preview copies
    the engine. Change the standard or the engine, not the Studio. Changing the engine alters
    every generated page and the approved reference HTML in `shared/examples/`, so if the
    engine moves, regenerate those and look at them.
-7. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
+5. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
    "My My Focus"; `study_studio.py` accepts `--host 0.0.0.0` with no authentication and
    its help text does not say so.

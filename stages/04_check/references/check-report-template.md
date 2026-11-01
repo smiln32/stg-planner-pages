@@ -24,6 +24,8 @@ qualified professional before publication.
 
 Tick each line after looking, not before. Software cannot judge these.
 
+Where to look hardest: <the blocks with the most rows for their height, page and title>.
+
 - [ ] Every page reviewed at 100% zoom and in print preview at US Letter
 - [ ] No heading or prompt is clipped
 - [ ] Every writing area is large enough to use with a pen
