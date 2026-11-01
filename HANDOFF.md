@@ -1,7 +1,8 @@
 # Handoff
 
 Written 2026-10-29, when the repository was laid out as an ICM workspace; brought up to date
-2026-10-31. It holds the state of the work and what to do next. Why things are the way they are is in [`DECISIONS.md`](DECISIONS.md).
+2026-10-31. It holds the state of the work and what to do next. Why things are the way they
+are is in [`DECISIONS.md`](DECISIONS.md).
 
 ## State
 
