@@ -11,8 +11,9 @@ are is in [`DECISIONS.md`](DECISIONS.md).
   `main` is at 54ffea5, matches the remote, and CI passed on it. No branch is open.
 - The ICM structure is in place and `tests/test_stages.py` holds it. The walk in
   `records/icm-audit.md` passes.
-- No planner has been taken through the five stages yet. Every stage's `output/` holds only
-  `.gitkeep`.
+- One planner has been taken through the five stages, in the cold walk of 2026-11-01
+  described below. Its files are on disk under `stages/*/output/` and ignored by git; a
+  fresh clone's `output/` folders hold only `.gitkeep`.
 - The engine is unchanged in behaviour but for one fix: the overlap check in
   `study_factory.py` raised `TypeError` on a numeric string coordinate such as `"28"`
   instead of reporting a finding. It now parses geometry once and compares integers, with a

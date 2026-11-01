@@ -81,7 +81,9 @@ order: say what the planner is, choose the pages, write and lay them out, check,
 
 **PASS, with one gap.** Each contract stops for a person, and `CLAUDE.md` forbids chaining
 stages even under an autonomous instruction. The export gate is not enforced by code; the
-contract alone holds it. `HANDOFF.md` lists the enforcement.
+contract alone holds it. *Added 2026-11-01:* the cold walk below showed the contract is
+enough; the assistant never touched the approval line, and enforcement has been dropped
+from `HANDOFF.md`.
 
 ## Where the workspace departs from the paper, on purpose
 
@@ -96,8 +98,11 @@ contract alone holds it. `HANDOFF.md` lists the enforcement.
 
 ## What this audit did not do
 
-- **The walk was made by the author of the contracts, not by a stranger.** No planner has yet
-  been taken through the five stages. That is the first item in `HANDOFF.md`.
+- **The walk was made by the author of the contracts, not by a stranger.** *Added
+  2026-11-01:* a stranger has since walked it. A fresh assistant given one line took a
+  planner through all five stages, stopped at every gate, was caught by the hash when the
+  specification was edited after approval, and archived before a revision. The two gaps it
+  exposed are closed; `HANDOFF.md` has the record.
 
 ## Structural counts
 

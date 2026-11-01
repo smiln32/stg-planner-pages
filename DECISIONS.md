@@ -95,8 +95,8 @@ each later stage's files for it move to `output/archive/<date>/`. Continuation l
 at `output/` itself, so a stale export cannot pass for progress, and nothing is deleted.
 
 **No tool enforces the export gate.** The sibling's export command refuses an unapproved
-check; here stage 05's contract makes the same demand of the assistant and `HANDOFF.md`
-lists the enforcement as a possible next step.
+check; here stage 05's contract makes the same demand of the assistant. The cold walk of
+2026-11-01 showed the contract holds on its own, so enforcement is not planned.
 
 ## The Studio
 
