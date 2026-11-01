@@ -10,11 +10,11 @@ web
 
 ## Users
 
-Planner Studio primarily serves creators producing complete planner products for customers. They need to define an audience and outcome, assemble a coherent multi-page set, customize every page, and prepare a polished deliverable without manually editing JSON coordinates.
+Topical Study Studio primarily serves creators producing complete planner products for customers. They need to define an audience and outcome, assemble a coherent multi-page set, customize every page, and prepare a polished deliverable without manually editing JSON coordinates.
 
 ## Product Purpose
 
-Planner Studio turns the existing specification-driven generator into a guided visual workflow. It recommends a page blueprint from a curated pattern library, lets creators add, remove, replace, reorder, and edit pages, and supports snap-to-grid movement of blocks within validated layouts. Success means a creator can move from a customer brief to a complete, reviewed, export-ready planner set while retaining control over every page.
+Topical Study Studio turns the existing specification-driven generator into a guided visual workflow. It recommends a page blueprint from a curated pattern library, lets creators add, remove, replace, reorder, and edit pages, and supports snap-to-grid movement of blocks within validated layouts. Success means a creator can move from a customer brief to a complete, reviewed, export-ready planner set while retaining control over every page.
 
 ## Positioning
 

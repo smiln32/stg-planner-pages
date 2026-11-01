@@ -3,7 +3,7 @@
 > **Where do I go?** This file routes a task to the place that handles it. It does not do
 > work. It points. Read `CLAUDE.md` first for the rules.
 
-STG Planner Pages turns a planner idea into printable pages. The folders are the instructions.
+Topical Study Studio turns a planner idea into printable pages. The folders are the instructions.
 
 | Layer | Question | Where |
 |---|---|---|
@@ -32,7 +32,7 @@ its own `output/`, and stops for a person to read them before the next begins.
 | 04 | `stages/04_check` | Decide whether it is fit to export | The specification | `<slug>.check.md`, `<slug>.proof.html` |
 | 05 | `stages/05_export` | Produce the files to keep and import | The specification, the approved check | `<slug>.html`, `<slug>.json` |
 
-Planner Studio does the same five steps on screen, by hand. The stage folders are how an
+Topical Study Studio does the same five steps on screen, by hand. The stage folders are how an
 assistant does them, with the same engine and the same rules.
 
 ## Routing rules
@@ -49,15 +49,15 @@ assistant does them, with the same engine and the same rules.
   `output/` into `output/archive/<YYYY-MM-DD>/` (add `-2`, `-3` for another revision the same
   day). Then no stale check or export can pass for the current one, and the earlier export
   is kept.
-- **"I want to make one by hand"** → run `python planner_studio.py` and use the Studio.
+- **"I want to make one by hand"** → run `python study_studio.py` and use the Studio.
 - **"I am using a chatbot, not this folder"** → `shared/new-chat-starter-prompt.md`.
 
 **Changing the tool**
 
-- **"Change how a page prints"** → `planner_factory.py`, held to `references/DESIGN_STANDARD.md`.
+- **"Change how a page prints"** → `study_factory.py`, held to `references/DESIGN_STANDARD.md`.
 - **"Change the Studio"** → `studio/`, held to `_config/design-system.md`.
 - **"Run or fix the tests"** → `tests/`.
-- **"Add a content type"** → `planner_factory.py`, then `references/SPECIFICATION.md`, then an example.
+- **"Add a content type"** → `study_factory.py`, then `references/SPECIFICATION.md`, then an example.
 
 **Finding something out**
 
@@ -74,7 +74,7 @@ assistant does them, with the same engine and the same rules.
 
 | Folder | What it holds |
 |---|---|
-| `_config/` | `product.md`, what Planner Studio is for; `design-system.md`, how it looks |
+| `_config/` | `product.md`, what Topical Study Studio is for; `design-system.md`, how it looks |
 | `references/` | `SPECIFICATION.md`, the file format; `DESIGN_STANDARD.md`, the printed page; `CONTENT_GUIDE.md`, the words |
 | `shared/` | The starter specification, the examples and the chatbot prompt; see `shared/CONTEXT.md` |
 | A stage's own `references/` | Material only that stage needs |
@@ -85,8 +85,8 @@ The stages do not contain the code that does the work. They call it.
 
 | Where | What |
 |---|---|
-| `planner_factory.py` | Validates a specification and turns it into pages |
-| `planner_studio.py` | The local server behind the Studio |
+| `study_factory.py` | Validates a specification and turns it into pages |
+| `study_studio.py` | The local server behind the Studio |
 | `studio/` | The Studio |
 | `assets/` | The README's pictures and the approved design references |
 | `tests/` | The checks, including `test_stages.py`, which holds this structure |

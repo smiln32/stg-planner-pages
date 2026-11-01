@@ -15,9 +15,9 @@ are is in [`DECISIONS.md`](DECISIONS.md).
 - No planner has been taken through the five stages yet. Every stage's `output/` holds only
   `.gitkeep`.
 - The engine is unchanged in behaviour but for one fix: the overlap check in
-  `planner_factory.py` raised `TypeError` on a numeric string coordinate such as `"28"`
+  `study_factory.py` raised `TypeError` on a numeric string coordinate such as `"28"`
   instead of reporting a finding. It now parses geometry once and compares integers, with a
-  test. The suite is twenty-three checks. CI compiles `planner_studio.py` as well, reads the
+  test. The suite is twenty-three checks. CI compiles `study_studio.py` as well, reads the
   examples from `shared/examples/`, and carries the product's new name.
 - An independent review on 2026-10-29 found seven gaps in the contracts: no way for stage
   05 to know the checked specification was the exported one, stale downstream files on a
@@ -52,21 +52,19 @@ are is in [`DECISIONS.md`](DECISIONS.md).
   direction. The stage contracts, `references/`, `shared/` and the Studio still speak only
   of planners, which is accurate until the study build exists. No study has been briefed.
   Doctrinal review was proposed and the owner declined it as a rule; do not add it to
-  `CLAUDE.md` or the contracts. The two program files keep their planner names until the
-  owner chooses new ones.
+  `CLAUDE.md` or the contracts.
+- On 2026-10-31 the owner named the product **Topical Study Studio**. The engine is now
+  `study_factory.py`, the server `study_studio.py`, the test file
+  `tests/test_study_factory.py`, and "Planner Studio" and "STG Planner Pages" are gone from
+  every file. The browser's saved-draft key is unchanged so existing drafts still open. The
+  repository is still `stg-planner-pages` on GitHub and on disk.
 
 ## Next
 
-1. **Rename the program files**, once the owner has chosen the names. `planner_factory.py`
-   and `planner_studio.py` are named for the old product; "Planner Studio" in
-   `_config/product.md`, the Studio's own title and the repository name are the same
-   decision. The rename is mechanical: `git mv` the two files, change the import in the
-   server, then update every reference in `tests/test_planner_factory.py` (sixteen),
-   `tests/test_design_tokens.py`, `.github/workflows/validate.yml`, `CLAUDE.md`,
-   `CONTEXT.md`, `README.md`, `HOW_IT_WORKS.md`, `references/SPECIFICATION.md`, the
-   contracts of stages 03, 04 and 05, `records/icm-audit.md`, `_config/design-system.md`,
-   `DECISIONS.md` and this file. Re-run the ICM audit walk afterwards, because the structure
-   changed.
+1. **Rename the repository**, if wanted, to match the product: on GitHub under Settings,
+   which redirects the old URL, and the folder on disk. Then change the badge, clone and
+   release URLs in `README.md` and `HOW_IT_WORKS.md`, which still say `stg-planner-pages`.
+   Only the owner can do the GitHub part.
 2. **The first study, through the stages as they are.** Give stage 01 a real study, six
    sessions on one subject, and take it through stage 02 only. The plan will show which
    pages the current blocks cannot express and how the whole-set uniqueness rule objects to
@@ -91,10 +89,10 @@ are is in [`DECISIONS.md`](DECISIONS.md).
    the hash and refuses to generate unless the line is ticked would do it.
 6. **The page engine and the page standard disagree on two colours.**
    `references/DESIGN_STANDARD.md` gives block borders as `#606864` and rules as `#aeb7b2`;
-   `planner_factory.py` draws them `#5c5c5c` and `#b9b9b9`, and the Studio preview copies
+   `study_factory.py` draws them `#5c5c5c` and `#b9b9b9`, and the Studio preview copies
    the engine. Change the standard or the engine, not the Studio. Changing the engine alters
    every generated page and the approved reference HTML in `shared/examples/`, so if the
    engine moves, regenerate those and look at them.
 7. **Small cosmetic items**, none blocking: `--init` without `--topic` titles the page
-   "My My Focus"; `planner_studio.py` accepts `--host 0.0.0.0` with no authentication and
+   "My My Focus"; `study_studio.py` accepts `--host 0.0.0.0` with no authentication and
    its help text does not say so.

@@ -52,7 +52,7 @@ which is text. No binary passes between stages.
 
 **PASS.** A person can open and change the brief, the plan and the specification before the
 next stage runs, and each contract tells the agent to read the file again. The specification
-also opens in Planner Studio.
+also opens in Topical Study Studio.
 
 ### 7. Can the agent tell where a run stands from the filesystem?
 
@@ -74,7 +74,7 @@ sections of `HOW_IT_WORKS.md` rather than repeat them.
 
 ### 10. Do the stages match the product?
 
-**PASS.** The five stages are the five things a creator does in Planner Studio in the same
+**PASS.** The five stages are the five things a creator does in Topical Study Studio in the same
 order: say what the planner is, choose the pages, write and lay them out, check, export.
 
 ### 11. Are the gates real?
@@ -85,7 +85,7 @@ contract alone holds it. `HANDOFF.md` lists the enforcement.
 
 ## Where the workspace departs from the paper, on purpose
 
-- **The engine is not inside the stage folders.** `planner_factory.py`, `planner_studio.py`,
+- **The engine is not inside the stage folders.** `study_factory.py`, `study_studio.py`,
   `studio/`, `tests/` and `assets/` stay at the root. `DECISIONS.md` records the reason.
 - **`README.md`, `HOW_IT_WORKS.md`, `DECISIONS.md` and `HANDOFF.md` are at the root, and
   `records/` holds this audit.** The paper names none of them. The router points at each.
@@ -111,3 +111,9 @@ contract alone holds it. `HANDOFF.md` lists the enforcement.
 **PASS.** A cold agent can move through the workspace in a clear hierarchy:
 
 `CLAUDE.md (behaviour) -> CONTEXT.md (routing) -> stage CONTEXT.md (execution) -> named inputs and references -> output (state)`
+
+## Re-walk, 2026-10-31
+
+The product was renamed Topical Study Studio and the engine, server and test file took the
+`study_` prefix. No folder moved. The walk was repeated: every layer and every question above
+holds, every path a contract names exists, and `tests/test_stages.py` passes.

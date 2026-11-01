@@ -35,7 +35,7 @@ Run commands from the project root.
    an earlier run left; when the warnings change, rewrite it so it matches the validator.
 
    ```bash
-   python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
+   python study_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
    ```
 
    Validation writes no file. Exit code 2 is an error, 1 a warning, 0 clean.
@@ -57,7 +57,7 @@ Run commands from the project root.
 
 ## Human gate
 
-The person may edit the file, or open it in Planner Studio and change it there. Do not start
+The person may edit the file, or open it in Topical Study Studio and change it there. Do not start
 stage 04 until they say it is ready.
 
 ## Next

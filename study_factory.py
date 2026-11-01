@@ -5,8 +5,8 @@ The output uses ordinary HTML text, divs, borders, checkboxes, lines, and tables
 so the pages print crisply from a browser and stay editable as HTML.
 
 Usage:
-    python planner_factory.py planner_spec.json output.html
-    python planner_factory.py planner_spec.json output.html --validate-only
+    python study_factory.py planner_spec.json output.html
+    python study_factory.py planner_spec.json output.html --validate-only
 """
 from __future__ import annotations
 

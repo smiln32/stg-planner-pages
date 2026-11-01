@@ -13,6 +13,13 @@ application. The brand already fits; STG is Simplify to Glorify. The study conte
 the per-session uniqueness rule and the study content guide are not built yet, so the stages
 build planners until they are, and `README.md` says what is planned and what is not.
 
+**The product is Topical Study Studio.** Named by the owner 2026-10-31. The engine is
+`study_factory.py`, the server `study_studio.py`, and the browser application is the Studio.
+The names drop "planner" without binding the tool to one kind of study. The repository keeps
+its GitHub name until the owner renames it there, so every URL still works. The browser's
+saved-draft key in `studio/app.js` keeps its old value so that drafts made before the rename
+still open; it is never shown to a person.
+
 **Canva is gone; the deliverable is a printed PDF.** Decided by the owner 2026-10-31. The
 product began as a Canva import tool. Studies are sold and printed as PDF, so every Canva
 reference, workflow section and default title was removed. The engine still renders HTML,
@@ -49,7 +56,7 @@ contract, `_config/`, `references/` and `shared/` hold what is stable, and each 
 which the owner chose over the hyphenated `01-name` style on 2026-07-16 for all their
 workspaces. The standalone ICM audit tool recognises only this dialect.
 
-**The engine stays at the root.** `planner_factory.py`, `planner_studio.py`, `studio/`,
+**The engine stays at the root.** `study_factory.py`, `study_studio.py`, `studio/`,
 `tests/` and `assets/` did not move. The paper describes staged content work, not
 application source, and keeping the engine where the commands, the tests and CI expect it
 means the restructure changed no code path. The stages call the engine; they do not hold it.
@@ -100,6 +107,6 @@ page engine share) and the stylesheet won where its value was a deliberate acces
 density choice: Focus Blue `#275f7b` rather than Layout Slate for focus rings, because slate
 does not reach contrast on white, and 8px × 13px button padding with a 40px minimum height.
 Those became tokens. The page preview inside the editor copies the page engine's colours and
-is not held to the tokens; `planner_factory.py` owns those. `tests/test_design_tokens.py`
+is not held to the tokens; `study_factory.py` owns those. `tests/test_design_tokens.py`
 fails on any colour in the stylesheet that is neither a token nor an engine colour, and on
 any token nothing in `studio/` uses.

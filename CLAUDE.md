@@ -1,10 +1,10 @@
 # Instructions for Claude
 
-**Where am I?** In STG Planner Pages: software that turns a JSON specification into
+**Where am I?** In Topical Study Studio: software that turns a JSON specification into
 printable US Letter pages, printed to PDF from a browser. It builds planners today and is
 being turned into a tool for topical Bible studies. The study content types do not exist
-yet, so until they do the stages build planners as written. `planner_factory.py` is the
-engine, `studio/` is Planner Studio, the browser application, and `stages/` is the same
+yet, so until they do the stages build planners as written. `study_factory.py` is the
+engine, `studio/` is Topical Study Studio, the browser application, and `stages/` is the same
 build laid out as five folders an assistant can walk one at a time.
 
 This workspace follows the Interpretable Context Methodology (ICM) of Jake Van Clief and
@@ -22,7 +22,7 @@ _config/           Layer 3: what the product is and how the Studio looks
 references/        Layer 3: the specification, the page design standard, the content guide
 shared/            Layer 3: the starter specification, the examples, the chatbot prompt
 records/           Kept, not instructions: the ICM structure audit
-planner_factory.py planner_studio.py studio/ tests/ assets/   the engine and its checks
+study_factory.py study_studio.py studio/ tests/ assets/   the engine and its checks
 DECISIONS.md       why things are the way they are
 HANDOFF.md         what comes next
 ```
@@ -46,11 +46,11 @@ Run from the project root.
 
 ```bash
 python -m unittest discover -s tests -v                       # the whole suite
-python -m py_compile planner_factory.py planner_studio.py
-python planner_factory.py SPEC.json OUT.html --validate-only  # check a specification
-python planner_factory.py SPEC.json OUT.html                  # generate the pages
-python planner_factory.py --init FILE.json --topic "TOPIC"    # a starter specification
-python planner_studio.py                                      # the Studio at http://127.0.0.1:8765
+python -m py_compile study_factory.py study_studio.py
+python study_factory.py SPEC.json OUT.html --validate-only  # check a specification
+python study_factory.py SPEC.json OUT.html                  # generate the pages
+python study_factory.py --init FILE.json --topic "TOPIC"    # a starter specification
+python study_studio.py                                      # the Studio at http://127.0.0.1:8765
 ```
 
 No third-party Python packages. Python 3.9 is the floor; CI runs 3.12 only, so keep to 3.9
@@ -58,14 +58,14 @@ syntax yourself. There is no linter or formatter; do not add one without asking.
 
 ## Rules that are not style preferences
 
-- **Restart the server after changing `planner_factory.py`.** `planner_studio.py` imports it
+- **Restart the server after changing `study_factory.py`.** `study_studio.py` imports it
   and holds the old module in memory.
 - **`custom_html` is inserted unescaped.** Only trusted specifications may use it, and the
   stage contracts prefer the standard content types for that reason.
 - **The page geometry is fixed:** 816 x 1056, content x=28 to 788 and y=104 to 1030, 14px
-  gaps. The constants live at the top of `planner_factory.py` and `references/DESIGN_STANDARD.md`
+  gaps. The constants live at the top of `study_factory.py` and `references/DESIGN_STANDARD.md`
   explains them. Change both or neither.
-- **`planner_studio.py` and `studio/app.js` are dense on purpose**, semicolon-joined and
+- **`study_studio.py` and `studio/app.js` are dense on purpose**, semicolon-joined and
   one-line. Do not reformat them.
 - **Sensitive topics.** A planner or study about mental health, trauma, disability,
   medication, grief, addiction or crisis is flagged for professional review before

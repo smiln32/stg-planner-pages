@@ -1,8 +1,8 @@
-﻿# STG Planner Pages: How It Works
+﻿# Topical Study Studio: How It Works
 
 ## Overview
 
-STG Planner Pages is a small Python-based system for creating polished, printable pages from structured JSON files. It was built for planners and is being turned into a tool for topical Bible studies. The study pieces, Scripture blocks from the NASB 2020, a repeating session structure and a verse count, are not built yet, so this guide describes the tool as it works today. The two program files will be renamed as part of that change; the commands below use their current names.
+Topical Study Studio is a small Python-based system for creating polished, printable pages from structured JSON files. It was built for planners and is being turned into a tool for topical Bible studies. The study pieces, Scripture blocks from the NASB 2020, a repeating session structure and a verse count, are not built yet, so this guide describes the tool as it works today. The two program files will be renamed as part of that change; the commands below use their current names.
 
 You describe a planner set in JSON: its title, page concepts, section positions, prompts, writing areas, checklists, choices, and tables. The factory validates that description and converts it into a self-contained HTML document. Each generated page is exactly 816 × 1056 pixels, representing an 8.5 × 11-inch US Letter page.
 
@@ -96,7 +96,7 @@ The reported version should be 3.9 or newer. On systems where the command is `py
 Create a starter specification for a topic:
 
 ```bash
-python planner_factory.py --init my-planner.json --topic "Morning Routine"
+python study_factory.py --init my-planner.json --topic "Morning Routine"
 ```
 
 This creates `my-planner.json` with one complete example page. The topic is inserted into its title and footer.
@@ -104,13 +104,13 @@ This creates `my-planner.json` with one complete example page. The topic is inse
 Validate it:
 
 ```bash
-python planner_factory.py my-planner.json my-planner.html --validate-only
+python study_factory.py my-planner.json my-planner.html --validate-only
 ```
 
 Generate the planner:
 
 ```bash
-python planner_factory.py my-planner.json my-planner.html
+python study_factory.py my-planner.json my-planner.html
 ```
 
 Open `my-planner.html` in a web browser. You should see a full US Letter planner page with four editable-content sections.
@@ -120,19 +120,19 @@ Open `my-planner.html` in a web browser. You should see a full US Letter planner
 ### Show the version
 
 ```bash
-python planner_factory.py --version
+python study_factory.py --version
 ```
 
 ### Create a starter specification
 
 ```bash
-python planner_factory.py --init FILE.json --topic "TOPIC"
+python study_factory.py --init FILE.json --topic "TOPIC"
 ```
 
 ### Validate without generating
 
 ```bash
-python planner_factory.py SPEC.json OUTPUT.html --validate-only
+python study_factory.py SPEC.json OUTPUT.html --validate-only
 ```
 
 The output filename is still supplied for command consistency, but no HTML file is written in validation-only mode.
@@ -140,7 +140,7 @@ The output filename is still supplied for command consistency, but no HTML file 
 ### Generate planner HTML
 
 ```bash
-python planner_factory.py SPEC.json OUTPUT.html
+python study_factory.py SPEC.json OUTPUT.html
 ```
 
 ## Understanding the JSON specification
@@ -265,13 +265,13 @@ The repository is laid out as an Interpretable Context Methodology (ICM) workspa
 CLAUDE.md                      Where an assistant is, and the rules
 CONTEXT.md                     Where a task goes
 stages/                        The planner build as five folders, one contract each
-_config/                       What Planner Studio is and how it looks
+_config/                       What Topical Study Studio is and how it looks
 references/                    SPECIFICATION.md, DESIGN_STANDARD.md, CONTENT_GUIDE.md
 shared/                        Specification template, examples, chatbot prompt
 records/                       The ICM structure audit
-planner_factory.py             Generator and validator
-planner_studio.py              Local server behind Planner Studio
-studio/                        Planner Studio
+study_factory.py             Generator and validator
+study_studio.py              Local server behind Topical Study Studio
+studio/                        Topical Study Studio
 tests/                         Automated unit tests
 assets/                        Repository preview images and approved design references
 HOW_IT_WORKS.md                This guide
@@ -328,4 +328,4 @@ The next product is a topical Bible study: six or so sessions on one subject, ea
 
 ## Summary
 
-To use STG Planner Pages successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path to a printed PDF. The design, content, and specification guides provide the standards needed to turn generated output into a polished set of pages.
+To use Topical Study Studio successfully, you need Python, a JSON specification, and a browser. The factory turns the JSON into precise US Letter HTML pages, validates common layout and repetition problems, and supports a human-reviewed path to a printed PDF. The design, content, and specification guides provide the standards needed to turn generated output into a polished set of pages.

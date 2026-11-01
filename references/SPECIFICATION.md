@@ -1,18 +1,18 @@
 ﻿# Planner Specification Reference
 
-STG Planner Pages reads a UTF-8 JSON document and renders each entry in `pages` as an editable 816 × 1056 px US Letter page.
+Topical Study Studio reads a UTF-8 JSON document and renders each entry in `pages` as an editable 816 × 1056 px US Letter page.
 
 ## Create a starter file
 
 ```bash
-python planner_factory.py --init my-planner.json --topic "Morning Routine"
+python study_factory.py --init my-planner.json --topic "Morning Routine"
 ```
 
 Then validate and generate it:
 
 ```bash
-python planner_factory.py my-planner.json output.html --validate-only
-python planner_factory.py my-planner.json output.html
+python study_factory.py my-planner.json output.html --validate-only
+python study_factory.py my-planner.json output.html
 ```
 
 ## Top-level fields

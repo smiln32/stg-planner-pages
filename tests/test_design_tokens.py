@@ -1,9 +1,9 @@
 """Hold the Studio stylesheet to the colour tokens in _config/design-system.md.
 
-The design system is the authority for how Planner Studio looks (CONTEXT.md, "Change the
+The design system is the authority for how Topical Study Studio looks (CONTEXT.md, "Change the
 Studio"). These checks fail when the stylesheet uses a colour the token table does not
 name, or when a token is named that nothing in the Studio uses. The page preview inside the
-editor copies the page engine's own colours, which are owned by planner_factory.py, so those
+editor copies the page engine's own colours, which are owned by study_factory.py, so those
 are allowed too.
 """
 import re
@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import planner_factory  # noqa: E402
+import study_factory  # noqa: E402
 
 HEX = re.compile(r"#[0-9a-fA-F]{3,6}\b")
 
@@ -57,7 +57,7 @@ class DesignTokenTests(unittest.TestCase):
         self.assertEqual(unused, [], f"tokens nothing in studio/ uses: {unused}")
 
     def test_stylesheet_uses_only_tokens_and_page_engine_colours(self):
-        allowed = set(self.tokens.values()) | hexes(planner_factory.CSS)
+        allowed = set(self.tokens.values()) | hexes(study_factory.CSS)
         stray = sorted(hexes(self.styles) - allowed)
         self.assertEqual(stray, [], f"colours in styles.css that are neither tokens nor page-engine colours: {stray}")
 

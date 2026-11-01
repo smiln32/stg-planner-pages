@@ -1,4 +1,4 @@
-﻿# New Chat Starter Prompt — STG Planner Pages
+﻿# New Chat Starter Prompt — Topical Study Studio
 
 For a chatbot that cannot read this folder. An assistant that can should start at `CLAUDE.md` and walk `stages/` instead. Upload this folder, then paste the request below with your topic and desired page count.
 

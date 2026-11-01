@@ -27,13 +27,13 @@ Run the command from the project root.
    generation returns 0 whenever it writes a proof, warnings or not:
 
    ```bash
-   python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
+   python study_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html --validate-only
    ```
 
 2. Render the proof. It prints the same findings again:
 
    ```bash
-   python planner_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html
+   python study_factory.py stages/03_spec/output/<slug>.json stages/04_check/output/<slug>.proof.html
    ```
 
 3. Record the specification's SHA-256, so stage 05 can tell whether the file it exports is

@@ -29,7 +29,7 @@ Run commands from the project root.
 3. Generate the finished planner:
 
    ```bash
-   python planner_factory.py stages/03_spec/output/<slug>.json stages/05_export/output/<slug>.html
+   python study_factory.py stages/03_spec/output/<slug>.json stages/05_export/output/<slug>.html
    ```
 
 4. Copy the specification beside it, so the export folder holds everything the creator
@@ -44,7 +44,7 @@ Run commands from the project root.
 | Artifact | Location | Format |
 |---|---|---|
 | The finished planner | `output/<slug>.html` | HTML, self-contained, ready to print to PDF |
-| The editable project | `output/<slug>.json` | JSON, which Planner Studio can open again |
+| The editable project | `output/<slug>.json` | JSON, which Topical Study Studio can open again |
 
 ## Human gate
 

@@ -1,5 +1,5 @@
 ---
-name: Planner Studio
+name: Topical Study Studio
 description: A professional working atelier for building customer-ready planner sets.
 colors:
   ink: "#343a38"
@@ -95,13 +95,13 @@ components:
     padding: "11px 13px"
 ---
 
-# Design System: Planner Studio
+# Design System: Topical Study Studio
 
 ## Overview
 
 **Creative North Star: "The Working Atelier"**
 
-Planner Studio is a professional work surface with the calm, material clarity of a well-run creative studio. The interface stays restrained so customer content and printable page previews remain visually dominant; color identifies tools, selection, page roles, and validation state rather than decorating empty space.
+Topical Study Studio is a professional work surface with the calm, material clarity of a well-run creative studio. The interface stays restrained so customer content and printable page previews remain visually dominant; color identifies tools, selection, page roles, and validation state rather than decorating empty space.
 
 The product should feel deliberate without becoming precious. Dense editing controls are allowed when they accelerate real work, but the interface must progressively reveal advanced choices and keep the active page understandable at a glance. It explicitly rejects generic AI-generator styling, interchangeable dashboard decoration, unexplained automatic choices, and template-first experiences that erase the creator's judgment.
 
@@ -141,7 +141,7 @@ The Working Atelier palette pairs charcoal working ink with muted studio colors 
 - **Quiet Rule** (`rule`): Separators, panel edges, and inactive guides.
 - **Focus Blue** (`focus`): Every focus ring and the active splitter. Layout Slate does not reach contrast on white, so focus uses this darker blue instead.
 
-**The page preview is not Studio chrome.** The true-size page inside the editor reproduces the printed page with the page engine's own values: block borders `#5c5c5c`, writing lines `#b9b9b9`, the subtitle `#4d4d4d`, the footer `#8c8c8c`. `planner_factory.py` owns them and `references/DESIGN_STANDARD.md` governs them; they are not tokens of this system and the Studio copies them unchanged.
+**The page preview is not Studio chrome.** The true-size page inside the editor reproduces the printed page with the page engine's own values: block borders `#5c5c5c`, writing lines `#b9b9b9`, the subtitle `#4d4d4d`, the footer `#8c8c8c`. `study_factory.py` owns them and `references/DESIGN_STANDARD.md` governs them; they are not tokens of this system and the Studio copies them unchanged.
 
 **The Orientation Rule.** Color groups and orients; it never fills space merely to make the interface feel creative.
 

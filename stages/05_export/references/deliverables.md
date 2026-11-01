@@ -5,7 +5,7 @@ What stage 05 writes, and what each file is for.
 | File | What it is | Who uses it |
 |---|---|---|
 | `<slug>.html` | The whole planner as one self-contained HTML document, one `<section>` per page at exactly 816 x 1056 | The creator, to print to PDF from a browser at US Letter |
-| `<slug>.json` | The specification the HTML was generated from | The creator, to open in Planner Studio or hand back to stage 03 for a revision |
+| `<slug>.json` | The specification the HTML was generated from | The creator, to open in Topical Study Studio or hand back to stage 03 for a revision |
 
 ## What is not written here
 

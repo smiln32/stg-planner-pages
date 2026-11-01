@@ -1,10 +1,10 @@
-# STG Planner Pages
+# Topical Study Studio
 
-[![Validate STG Planner Pages](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml/badge.svg)](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml) [![Release](https://img.shields.io/badge/release-v1.1.0-6f8f72)](https://github.com/smiln32/stg-planner-pages/releases/tag/v1.1.0) [![License: MIT](https://img.shields.io/badge/license-MIT-7b9fb3.svg)](LICENSE)
+[![Validate Topical Study Studio](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml/badge.svg)](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml) [![Release](https://img.shields.io/badge/release-v1.1.0-6f8f72)](https://github.com/smiln32/stg-planner-pages/releases/tag/v1.1.0) [![License: MIT](https://img.shields.io/badge/license-MIT-7b9fb3.svg)](LICENSE)
 
-STG Planner Pages turns a JSON specification into printable US Letter pages. It renders print-ready HTML at exactly 816 × 1056 pixels, validates the layout and the wording, and a browser prints the result to PDF.
+Topical Study Studio turns a JSON specification into printable US Letter pages. It renders print-ready HTML at exactly 816 × 1056 pixels, validates the layout and the wording, and a browser prints the result to PDF.
 
-It was built for wellness planners and is being turned into a tool for **topical Bible studies**: a study is a set of sessions, each a few pages that take the reader through a passage and into application. The engine, the validator, Planner Studio and the five-stage build all carry over. The study-specific pieces, listed under [Where it is going](#where-it-is-going), do not exist yet, so the tool builds planners exactly as documented here until they do.
+It was built for wellness planners and is being turned into a tool for **topical Bible studies**: a study is a set of sessions, each a few pages that take the reader through a passage and into application. The engine, the validator, Topical Study Studio and the five-stage build all carry over. The study-specific pieces, listed under [Where it is going](#where-it-is-going), do not exist yet, so the tool builds planners exactly as documented here until they do.
 
 Each page is designed around one clear concept, with response formats and layouts chosen to match its purpose.
 
@@ -36,12 +36,12 @@ The next product is a topical Bible study: six or so sessions on one subject, pr
 
 No third-party Python packages are required.
 
-## Planner Studio
+## The Studio
 
-Planner Studio is the visual, local-first way to create a complete planner without editing JSON coordinates. It guides you from a customer brief to a recommended page blueprint, then lets you edit, reorder, validate, and export the planner in your browser.
+The Studio is the visual, local-first way to create a complete planner without editing JSON coordinates. It guides you from a customer brief to a recommended page blueprint, then lets you edit, reorder, validate, and export the planner in your browser.
 
 ```bash
-python planner_studio.py
+python study_studio.py
 ```
 
 The studio opens at `http://127.0.0.1:8765`. Drafts are saved in that browser on your computer. Nothing is uploaded to a service or account. Use **Download editable project** to keep a portable JSON backup and **Download finished HTML** for the print-ready pages.
@@ -51,13 +51,13 @@ Studio features include blueprint recommendations, page sequencing, a full-page 
 Create a topic-aware starter specification:
 
 ```bash
-python planner_factory.py --init my-planner.json --topic "Morning Routine"
+python study_factory.py --init my-planner.json --topic "Morning Routine"
 ```
 
 Show the installed version:
 
 ```bash
-python planner_factory.py --version
+python study_factory.py --version
 ```
 
 ## Complete guide
@@ -76,13 +76,13 @@ For a plain-language explanation of the system, requirements, setup, commands, v
 Generate a planner:
 
 ```bash
-python planner_factory.py planner_spec.json output.html
+python study_factory.py planner_spec.json output.html
 ```
 
 Validate without creating an output file:
 
 ```bash
-python planner_factory.py planner_spec.json output.html --validate-only
+python study_factory.py planner_spec.json output.html --validate-only
 ```
 
 Validation messages are written to the terminal. Errors must be corrected before publication; layout warnings should be reviewed rather than ignored.
@@ -167,13 +167,13 @@ CLAUDE.md                      Layer 0: where an assistant is and the rules
 CONTEXT.md                     Layer 1: where a task goes
 stages/                        Layer 2: the planner build as five folders, each with a contract
   01_brief/ 02_pages/ 03_spec/ 04_check/ 05_export/
-_config/                       Layer 3: product.md and design-system.md (Planner Studio)
+_config/                       Layer 3: product.md and design-system.md (Topical Study Studio)
 references/                    Layer 3: SPECIFICATION.md, DESIGN_STANDARD.md, CONTENT_GUIDE.md
 shared/                        Layer 3: planner_spec_template.json, examples/, the chatbot prompt
 records/                       The ICM structure audit
-planner_factory.py             HTML generator and validator
-planner_studio.py              Local server behind Planner Studio
-studio/                        Planner Studio
+study_factory.py             HTML generator and validator
+study_studio.py              Local server behind Topical Study Studio
+studio/                        Topical Study Studio
 tests/                         Automated unit tests, including the structure test
 assets/                        README preview images and approved design references
 HOW_IT_WORKS.md                Plain-language setup and operating guide
