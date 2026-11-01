@@ -1,19 +1,24 @@
 # Handoff
 
 Written 2026-10-29, when the repository was laid out as an ICM workspace; brought up to date
-2026-10-31. It holds the state of the work and what to do next. Why things are the way they
+2026-11-01. It holds the state of the work and what to do next. Why things are the way they
 are is in [`DECISIONS.md`](DECISIONS.md).
 
 ## State
 
 - The repository lives at `github.com/smiln32/topical-study-studio`, public, created
   2026-10-30 as `stg-planner-pages` and renamed 2026-11-01; the old address redirects.
-  `main` is at 54ffea5, matches the remote, and CI passed on it. No branch is open.
+  `main` is at acdbc2b, matches the remote, and CI passed on it. No branch is open.
 - The ICM structure is in place and `tests/test_stages.py` holds it. The walk in
   `records/icm-audit.md` passes.
 - One planner has been taken through the five stages, in the cold walk of 2026-11-01
-  described below. Its files are on disk under `stages/*/output/` and ignored by git; a
-  fresh clone's `output/` folders hold only `.gitkeep`.
+  described below. The walk ended partway through a page-change revision, so on the owner's
+  disk `vegetable-garden.brief.md` and `vegetable-garden.plan.md` sit in the stage 01 and 02
+  `output/` folders and the first run's specification, check and export sit under
+  `output/archive/2026-11-01/` in stages 03 to 05. It was a test of the structure, not a
+  product; do not carry it on, and move the two files into the archive if the stage folders
+  should be clean before the first study. All of it is ignored by git, and a fresh clone's
+  `output/` folders hold only `.gitkeep`.
 - The engine is unchanged in behaviour but for one fix: the overlap check in
   `study_factory.py` raised `TypeError` on a numeric string coordinate such as `"28"`
   instead of reporting a finding. It now parses geometry once and compares integers, with a
