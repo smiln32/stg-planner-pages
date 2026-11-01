@@ -6,10 +6,9 @@ are is in [`DECISIONS.md`](DECISIONS.md).
 
 ## State
 
-- The repository lives at `github.com/smiln32/stg-planner-pages`, public, created
-  2026-10-30. `main` is at c9a9726 and matches the remote. The `drop-canva` branch holds the
-  Canva removal and the pivot documents of 2026-10-31, listed below; merge it into `main`,
-  push, and delete it.
+- The repository lives at `github.com/smiln32/topical-study-studio`, public, created
+  2026-10-30 as `stg-planner-pages` and renamed 2026-11-01; the old address redirects.
+  `main` is at 54ffea5, matches the remote, and CI passed on it. No branch is open.
 - The ICM structure is in place and `tests/test_stages.py` holds it. The walk in
   `records/icm-audit.md` passes.
 - No planner has been taken through the five stages yet. Every stage's `output/` holds only
@@ -57,14 +56,14 @@ are is in [`DECISIONS.md`](DECISIONS.md).
   `study_factory.py`, the server `study_studio.py`, the test file
   `tests/test_study_factory.py`, and "Planner Studio" and "STG Planner Pages" are gone from
   every file. The browser's saved-draft key is unchanged so existing drafts still open. The
-  repository is still `stg-planner-pages` on GitHub and on disk.
+  repository was renamed on GitHub on 2026-11-01 and its URLs updated; the folder on disk is
+  still `stg-planner-pages`, and nothing inside depends on that name.
 
 ## Next
 
-1. **Rename the repository**, if wanted, to match the product: on GitHub under Settings,
-   which redirects the old URL, and the folder on disk. Then change the badge, clone and
-   release URLs in `README.md` and `HOW_IT_WORKS.md`, which still say `stg-planner-pages`.
-   Only the owner can do the GitHub part.
+1. **Rename the folder on disk**, if wanted, to `topical-study-studio`. Do it with no
+   editor or server open in it, because it sits in OneDrive. Nothing inside depends on the
+   name; the assistant's memory folder is keyed to the old path and will simply start fresh.
 2. **The first study, through the stages as they are.** Give stage 01 a real study, six
    sessions on one subject, and take it through stage 02 only. The plan will show which
    pages the current blocks cannot express and how the whole-set uniqueness rule objects to

@@ -1,6 +1,6 @@
 # Topical Study Studio
 
-[![Validate Topical Study Studio](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml/badge.svg)](https://github.com/smiln32/stg-planner-pages/actions/workflows/validate.yml) [![Release](https://img.shields.io/badge/release-v1.1.0-6f8f72)](https://github.com/smiln32/stg-planner-pages/releases/tag/v1.1.0) [![License: MIT](https://img.shields.io/badge/license-MIT-7b9fb3.svg)](LICENSE)
+[![Validate Topical Study Studio](https://github.com/smiln32/topical-study-studio/actions/workflows/validate.yml/badge.svg)](https://github.com/smiln32/topical-study-studio/actions/workflows/validate.yml) [![Release](https://img.shields.io/badge/release-v1.1.0-6f8f72)](https://github.com/smiln32/topical-study-studio/releases/tag/v1.1.0) [![License: MIT](https://img.shields.io/badge/license-MIT-7b9fb3.svg)](LICENSE)
 
 Topical Study Studio turns a JSON specification into printable US Letter pages. It renders print-ready HTML at exactly 816 × 1056 pixels, validates the layout and the wording, and a browser prints the result to PDF.
 

@@ -69,8 +69,8 @@ The generator uses only the Python standard library. No third-party Python packa
 Download the repository as a ZIP from GitHub and extract it, or clone it with Git:
 
 ```bash
-git clone https://github.com/smiln32/stg-planner-pages.git
-cd stg-planner-pages
+git clone https://github.com/smiln32/topical-study-studio.git
+cd topical-study-studio
 ```
 
 The repository is public, so no GitHub sign-in is required to clone it.
